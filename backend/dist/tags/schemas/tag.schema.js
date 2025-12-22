@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TagSchema = exports.Tag = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
-const subject_schema_1 = require("../../subjects/schemas/subject.schema");
 let Tag = class Tag {
     name;
     subjectId;
@@ -28,7 +27,7 @@ __decorate([
         ref: 'Subject',
         required: true,
     }),
-    __metadata("design:type", subject_schema_1.Subject)
+    __metadata("design:type", String)
 ], Tag.prototype, "subjectId", void 0);
 exports.Tag = Tag = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })

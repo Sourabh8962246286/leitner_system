@@ -1,13 +1,12 @@
 import * as mongoose from 'mongoose';
 import { Box } from '../../boxes/schemas/box.schema';
 import { Tag } from '../../tags/schemas/tag.schema';
-import { Subject } from '../../subjects/schemas/subject.schema';
 export type CardDocument = Card & mongoose.Document;
 export declare class Card {
     front: string;
     back: string;
     currentBoxId: Box;
-    subjectId: Subject;
+    subjectId: string;
     lastReviewed: Date;
     tags: Tag[];
     color: string;
@@ -52,7 +51,7 @@ export declare const CardSchema: mongoose.Schema<Card, mongoose.Model<Card, any,
     }, "id"> & {
         id: string;
     }> | undefined;
-    subjectId?: mongoose.SchemaDefinitionProperty<Subject, Card, mongoose.Document<unknown, {}, Card, {
+    subjectId?: mongoose.SchemaDefinitionProperty<string, Card, mongoose.Document<unknown, {}, Card, {
         id: string;
     }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<Card & {
         _id: mongoose.Types.ObjectId;

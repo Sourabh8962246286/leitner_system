@@ -28,7 +28,7 @@ export class Card {
     ref: 'Subject',
     required: true,
   })
-  subjectId: Subject;
+  subjectId: string;
 
   @Prop()
   lastReviewed: Date;

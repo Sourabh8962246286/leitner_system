@@ -15,7 +15,7 @@ export class Tag {
     ref: 'Subject',
     required: true,
   })
-  subjectId: Subject;
+  subjectId: string;
 }
 
 export const TagSchema = SchemaFactory.createForClass(Tag);

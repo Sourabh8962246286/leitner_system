@@ -13,7 +13,6 @@ exports.CardSchema = exports.Card = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose = require("mongoose");
 const box_schema_1 = require("../../boxes/schemas/box.schema");
-const subject_schema_1 = require("../../subjects/schemas/subject.schema");
 let Card = class Card {
     front;
     back;
@@ -42,7 +41,7 @@ __decorate([
         ref: 'Subject',
         required: true,
     }),
-    __metadata("design:type", subject_schema_1.Subject)
+    __metadata("design:type", String)
 ], Card.prototype, "subjectId", void 0);
 __decorate([
     (0, mongoose_1.Prop)(),
