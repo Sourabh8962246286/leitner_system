@@ -16,43 +16,48 @@ exports.SubjectsController = void 0;
 const common_1 = require("@nestjs/common");
 const subjects_service_1 = require("./subjects.service");
 const create_subject_dto_1 = require("./dto/create-subject.dto");
+const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
 let SubjectsController = class SubjectsController {
     subjectsService;
     constructor(subjectsService) {
         this.subjectsService = subjectsService;
     }
-    create(createSubjectDto) {
-        return this.subjectsService.create(createSubjectDto);
+    create(createSubjectDto, req) {
+        return this.subjectsService.create(createSubjectDto, req.user.userId);
     }
-    findAll() {
-        return this.subjectsService.findAll();
+    findAll(req) {
+        return this.subjectsService.findAll(req.user.userId);
     }
-    delete(id) {
-        return this.subjectsService.delete(id);
+    delete(id, req) {
+        return this.subjectsService.delete(id, req.user.userId);
     }
 };
 exports.SubjectsController = SubjectsController;
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_subject_dto_1.CreateSubjectDto]),
+    __metadata("design:paramtypes", [create_subject_dto_1.CreateSubjectDto, Object]),
     __metadata("design:returntype", Promise)
 ], SubjectsController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], SubjectsController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], SubjectsController.prototype, "delete", null);
 exports.SubjectsController = SubjectsController = __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Controller)('subjects'),
     __metadata("design:paramtypes", [subjects_service_1.SubjectsService])
 ], SubjectsController);

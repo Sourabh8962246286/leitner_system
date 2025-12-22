@@ -25,19 +25,20 @@ let CardsService = class CardsService {
         this.cardModel = cardModel;
         this.boxesService = boxesService;
     }
-    async create(createCardDto) {
+    async create(createCardDto, userId) {
         const firstBox = await this.boxesService.findByLevel(1);
         if (!firstBox) {
             throw new common_1.NotFoundException('Box with level 1 not found. Cannot create card.');
         }
         const newCard = new this.cardModel({
             ...createCardDto,
+            userId,
             currentBoxId: firstBox._id,
         });
         return newCard.save();
     }
-    async findAll(tagIds, subjectId) {
-        const filter = {};
+    async findAll(userId, tagIds, subjectId) {
+        const filter = { userId };
         if (tagIds && tagIds.length > 0) {
             filter.tags = { $all: tagIds };
         }
@@ -46,25 +47,25 @@ let CardsService = class CardsService {
         }
         return this.cardModel.find(filter).exec();
     }
-    async handleReview(reviewCardDto) {
+    async handleReview(reviewCardDto, userId) {
         const { cardId, isCorrect } = reviewCardDto;
-        const card = await this.cardModel.findById(cardId).populate('currentBoxId').exec();
+        const card = await this.cardModel
+            .findOne({ _id: cardId, userId })
+            .populate('currentBoxId')
+            .exec();
         if (!card) {
-            throw new common_1.NotFoundException(`Card with ID "${cardId}" not found`);
+            throw new common_1.ForbiddenException('Card not found or you do not have permission.');
         }
         const currentBox = card.currentBoxId;
         const currentLevel = currentBox.level;
         let nextBox;
         if (isCorrect) {
-            console.log(`Correct: Card in Box ${currentLevel}. Moving to next box.`);
             nextBox = await this.boxesService.findByLevel(currentLevel + 1);
             if (!nextBox) {
-                console.log(`Correct: Card is in the final box.`);
                 nextBox = currentBox;
             }
         }
         else {
-            console.log(`Incorrect: Card in Box ${currentLevel}. Moving to Box 1.`);
             nextBox = await this.boxesService.findByLevel(1);
             if (!nextBox) {
                 throw new common_1.NotFoundException('Box with level 1 not found.');
@@ -74,14 +75,24 @@ let CardsService = class CardsService {
         card.lastReviewed = new Date();
         return card.save();
     }
-    async update(cardId, updateCardDto) {
-        const updatedCard = await this.cardModel.findByIdAndUpdate(cardId, updateCardDto, { new: true }).exec();
+    async update(cardId, updateCardDto, userId) {
+        const card = await this.cardModel.findOne({ _id: cardId, userId }).exec();
+        if (!card) {
+            throw new common_1.ForbiddenException('Card not found or you do not have permission.');
+        }
+        const updatedCard = await this.cardModel
+            .findByIdAndUpdate(cardId, updateCardDto, { new: true })
+            .exec();
         if (!updatedCard) {
             throw new common_1.NotFoundException(`Card with ID "${cardId}" not found`);
         }
         return updatedCard;
     }
-    async delete(cardId) {
+    async delete(cardId, userId) {
+        const card = await this.cardModel.findOne({ _id: cardId, userId }).exec();
+        if (!card) {
+            throw new common_1.ForbiddenException('Card not found or you do not have permission.');
+        }
         const result = await this.cardModel.deleteOne({ _id: cardId }).exec();
         if (result.deletedCount === 0) {
             throw new common_1.NotFoundException(`Card with ID "${cardId}" not found`);

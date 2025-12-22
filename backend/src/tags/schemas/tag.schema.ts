@@ -16,6 +16,11 @@ export class Tag {
     required: true,
   })
   subjectId: string;
+
+  @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'User', required: true })
+  userId: string;
 }
 
 export const TagSchema = SchemaFactory.createForClass(Tag);
+
+TagSchema.index({ userId: 1, subjectId: 1, name: 1 }, { unique: true });

@@ -28,23 +28,39 @@ let SubjectsService = class SubjectsService {
         this.cardModel = cardModel;
         this.tagModel = tagModel;
     }
-    async create(createSubjectDto) {
-        const createdSubject = new this.subjectModel(createSubjectDto);
-        return createdSubject.save();
+    async create(createSubjectDto, userId) {
+        const createdSubject = new this.subjectModel({ ...createSubjectDto, userId });
+        try {
+            return await createdSubject.save();
+        }
+        catch (error) {
+            if (error.code === 11000) {
+                throw new common_1.ConflictException('You already have a subject with this name.');
+            }
+            throw error;
+        }
     }
-    async findAll() {
-        return this.subjectModel.find().exec();
+    async findAll(userId) {
+        return this.subjectModel.find({ userId }).exec();
     }
-    async delete(id) {
-        const cardCount = await this.cardModel.countDocuments({ subjectId: id }).exec();
+    async delete(id, userId) {
+        const subject = await this.subjectModel.findOne({ _id: id, userId }).exec();
+        if (!subject) {
+            throw new common_1.ForbiddenException('Subject not found or you do not have permission.');
+        }
+        const cardCount = await this.cardModel
+            .countDocuments({ subjectId: id, userId })
+            .exec();
         if (cardCount > 0) {
             throw new common_1.ConflictException(`Cannot delete subject with ID "${id}" because it is associated with ${cardCount} card(s).`);
         }
-        const result = await this.subjectModel.deleteOne({ _id: id }).exec();
+        const result = await this.subjectModel
+            .deleteOne({ _id: id, userId })
+            .exec();
         if (result.deletedCount === 0) {
             throw new common_1.NotFoundException(`Subject with ID "${id}" not found`);
         }
-        await this.tagModel.deleteMany({ subjectId: id }).exec();
+        await this.tagModel.deleteMany({ subjectId: id, userId }).exec();
         return { deleted: true, _id: id };
     }
 };

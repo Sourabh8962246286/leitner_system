@@ -22,21 +22,32 @@ let TagsService = class TagsService {
     constructor(tagModel) {
         this.tagModel = tagModel;
     }
-    async create(createTagDto) {
+    async create(createTagDto, userId) {
         const { name, subjectId } = createTagDto;
-        const existingTag = await this.tagModel.findOne({ name, subjectId }).exec();
-        if (existingTag) {
-            throw new common_1.ConflictException(`Tag "${name}" already exists for this subject.`);
+        const newTag = new this.tagModel({ ...createTagDto, userId });
+        try {
+            return await newTag.save();
         }
-        const newTag = new this.tagModel(createTagDto);
-        return newTag.save();
+        catch (error) {
+            if (error.code === 11000) {
+                throw new common_1.ConflictException(`Tag "${name}" already exists for this subject.`);
+            }
+            throw error;
+        }
     }
-    async findAll(subjectId) {
-        const filter = subjectId ? { subjectId } : {};
+    async findAll(userId, subjectId) {
+        const filter = { userId };
+        if (subjectId) {
+            filter.subjectId = subjectId;
+        }
         return this.tagModel.find(filter).exec();
     }
-    async delete(id) {
-        const result = await this.tagModel.deleteOne({ _id: id }).exec();
+    async delete(id, userId) {
+        const tag = await this.tagModel.findOne({ _id: id, userId }).exec();
+        if (!tag) {
+            throw new common_1.ForbiddenException('Tag not found or you do not have permission.');
+        }
+        const result = await this.tagModel.deleteOne({ _id: id, userId }).exec();
         if (result.deletedCount === 0) {
             throw new common_1.NotFoundException(`Tag with ID "${id}" not found`);
         }

@@ -15,6 +15,7 @@ const mongoose_2 = require("mongoose");
 let Tag = class Tag {
     name;
     subjectId;
+    userId;
 };
 exports.Tag = Tag;
 __decorate([
@@ -29,8 +30,13 @@ __decorate([
     }),
     __metadata("design:type", String)
 ], Tag.prototype, "subjectId", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: mongoose_2.Schema.Types.ObjectId, ref: 'User', required: true }),
+    __metadata("design:type", String)
+], Tag.prototype, "userId", void 0);
 exports.Tag = Tag = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Tag);
 exports.TagSchema = mongoose_1.SchemaFactory.createForClass(Tag);
+exports.TagSchema.index({ userId: 1, subjectId: 1, name: 1 }, { unique: true });
 //# sourceMappingURL=tag.schema.js.map

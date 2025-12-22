@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leitner System</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="modal-overlay">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="main-container" style="display: none; width: 100%;">
+      <div id="modal-overlay">
         <div id="create-card-modal" class="modal">
             <button class="close-btn">&times;</button>
             <div class="create-card-area">
@@ -20,7 +21,8 @@
                                 <div id="create-card-color-selector" class="color-selector-tray">
                                     <!-- Color swatches will be dynamically inserted here -->
                                 </div>
-                                <button type="submit">Create Card</button>                </form>
+                                <button type="submit">Create Card</button>
+                </form>
             </div>
         </div>
         <div id="manage-tags-modal" class="modal">
@@ -47,39 +49,61 @@
         </div>
     </div>
 
-    <h1>Leitner System</h1>
-    <div class="main-actions">
+      <div style="width: 100%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center;">
+        <h1>Leitner System</h1>
+        <button id="logout-btn" class="btn">Logout</button>
+      </div>
+
+
+      <div class="main-actions">
         <button id="open-create-card-modal">Create New Card</button>
         <button id="open-manage-tags-modal">Manage Tags</button>
         <button id="open-manage-subjects-modal">Manage Subjects</button>
-    </div>
+      </div>
 
-    <div id="filter-subjects-area">
+      <div id="filter-subjects-area">
         <h2>Filter by Subject</h2>
         <select id="subject-filter">
-            <option value="">All Subjects</option>
+          <option value="">All Subjects</option>
         </select>
-    </div>
+      </div>
 
-    <div id="filter-tags-area">
+      <div id="filter-tags-area">
         <h2>Filter by Tags</h2>
         <div id="tag-filters"></div>
-    </div>
+      </div>
 
-    <div id="leitner-container" class="leitner-container">
+      <div id="leitner-container" class="leitner-container">
         <!-- Boxes will be dynamically inserted here -->
-    </div>
-    <div id="card-staging-area" class="card-staging-area">
+      </div>
+      <div id="card-staging-area" class="card-staging-area">
         <h2>Review Area</h2>
         <div id="card-to-review" class="card-to-review">
-            <!-- The current card for review will be placed here -->
+          <!-- The current card for review will be placed here -->
         </div>
         <div class="review-buttons">
-            <button id="correct-btn">Correct</button>
-            <button id="incorrect-btn">Incorrect</button>
+          <button id="correct-btn">Correct</button>
+          <button id="incorrect-btn">Incorrect</button>
         </div>
+      </div>
     </div>
     <script src="constants.js"></script>
+    <script src="auth.js"></script>
     <script src="frontend.js"></script>
-</body>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.auth && window.auth.getToken()) {
+          document.getElementById('main-container').style.display = 'block';
+        }
+        const logoutBtn = document.getElementById('logout-btn');
+        if(logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                if(window.auth) {
+                    window.auth.logout();
+                }
+            });
+        }
+      });
+    </script>
+  </body>
 </html>

@@ -8,9 +8,9 @@ export declare class SubjectsService {
     private cardModel;
     private tagModel;
     constructor(subjectModel: Model<SubjectDocument>, cardModel: Model<CardDocument>, tagModel: Model<TagDocument>);
-    create(createSubjectDto: CreateSubjectDto): Promise<Subject>;
-    findAll(): Promise<Subject[]>;
-    delete(id: string): Promise<{
+    create(createSubjectDto: CreateSubjectDto, userId: string): Promise<Subject>;
+    findAll(userId: string): Promise<Subject[]>;
+    delete(id: string, userId: string): Promise<{
         deleted: boolean;
         _id: string;
     }>;

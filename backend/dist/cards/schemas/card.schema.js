@@ -21,6 +21,7 @@ let Card = class Card {
     lastReviewed;
     tags;
     color;
+    userId;
 };
 exports.Card = Card;
 __decorate([
@@ -55,6 +56,10 @@ __decorate([
     (0, mongoose_1.Prop)({ type: String }),
     __metadata("design:type", String)
 ], Card.prototype, "color", void 0);
+__decorate([
+    (0, mongoose_1.Prop)({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, index: true }),
+    __metadata("design:type", String)
+], Card.prototype, "userId", void 0);
 exports.Card = Card = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Card);

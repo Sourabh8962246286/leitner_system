@@ -38,6 +38,9 @@ export class Card {
 
   @Prop({ type: String })
   color: string;
+
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, index: true })
+  userId: string;
 }
 
 export const CardSchema = SchemaFactory.createForClass(Card);

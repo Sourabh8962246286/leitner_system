@@ -10,6 +10,7 @@ export declare class Card {
     lastReviewed: Date;
     tags: Tag[];
     color: string;
+    userId: string;
 }
 export declare const CardSchema: mongoose.Schema<Card, mongoose.Model<Card, any, any, any, mongoose.Document<unknown, any, Card, any, mongoose.DefaultSchemaOptions> & Card & {
     _id: mongoose.Types.ObjectId;
@@ -79,6 +80,15 @@ export declare const CardSchema: mongoose.Schema<Card, mongoose.Model<Card, any,
         id: string;
     }> | undefined;
     color?: mongoose.SchemaDefinitionProperty<string, Card, mongoose.Document<unknown, {}, Card, {
+        id: string;
+    }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<Card & {
+        _id: mongoose.Types.ObjectId;
+    } & {
+        __v: number;
+    }, "id"> & {
+        id: string;
+    }> | undefined;
+    userId?: mongoose.SchemaDefinitionProperty<string, Card, mongoose.Document<unknown, {}, Card, {
         id: string;
     }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<Card & {
         _id: mongoose.Types.ObjectId;

@@ -6,8 +6,13 @@ export type SubjectDocument = Subject & mongoose.Document;
 
 @Schema({ timestamps: true })
 export class Subject {
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true })
   name: string;
+
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true })
+  userId: string;
 }
 
 export const SubjectSchema = SchemaFactory.createForClass(Subject);
+
+SubjectSchema.index({ userId: 1, name: 1 }, { unique: true });

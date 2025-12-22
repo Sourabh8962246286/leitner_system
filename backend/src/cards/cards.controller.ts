@@ -1,74 +1,85 @@
 
-import { Body, Controller, Delete, Get, Param, Patch, Post, Query, ValidationPipe } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+  UseGuards,
+  Request,
+  ValidationPipe,
+} from '@nestjs/common';
 import { CardsService } from './cards.service';
 import { CreateCardDto } from './dto/create-card.dto';
 import { ReviewCardDto } from './dto/review-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 /**
  * Controller for handling HTTP requests related to cards.
  */
+@UseGuards(JwtAuthGuard)
 @Controller('cards')
 export class CardsController {
   constructor(private readonly cardsService: CardsService) {}
 
   /**
    * Handles POST requests to /cards.
-   * Creates a new card.
-   * @param createCardDto The request body, validated by ValidationPipe.
-   * @returns The newly created card document.
+   * Creates a new card for the authenticated user.
    */
   @Post()
-  create(@Body(new ValidationPipe()) createCardDto: CreateCardDto) {
-    return this.cardsService.create(createCardDto);
+  create(@Body(new ValidationPipe()) createCardDto: CreateCardDto, @Request() req) {
+    return this.cardsService.create(createCardDto, req.user.userId);
   }
 
   /**
    * Handles GET requests to /cards.
-   * Returns a list of all cards, optionally filtered by tags and subject.
-   * @param tags A comma-separated string of tag IDs.
-   * @param subjectId The ID of the subject to filter by.
+   * Returns a list of cards for the authenticated user, optionally filtered.
    */
   @Get()
-  findAll(@Query('tags') tags?: string, @Query('subjectId') subjectId?: string) {
+  findAll(
+    @Query('tags') tags: string,
+    @Query('subjectId') subjectId: string,
+    @Request() req,
+  ) {
     const tagIds = tags ? tags.split(',') : [];
-    return this.cardsService.findAll(tagIds, subjectId);
+    return this.cardsService.findAll(req.user.userId, tagIds, subjectId);
   }
 
   /**
    * Handles POST requests to /cards/review.
-   * Accepts a cardId and a boolean indicating if the review was correct.
-   * Uses the Leitner engine in CardsService to move the card.
-   * @param reviewCardDto The request body, validated by ValidationPipe.
-   * @returns The updated card document.
+   * Handles a review for a card owned by the authenticated user.
    */
   @Post('review')
-  handleReview(@Body(new ValidationPipe()) reviewCardDto: ReviewCardDto) {
-    return this.cardsService.handleReview(reviewCardDto);
+  handleReview(
+    @Body(new ValidationPipe()) reviewCardDto: ReviewCardDto,
+    @Request() req,
+  ) {
+    return this.cardsService.handleReview(reviewCardDto, req.user.userId);
   }
 
   /**
    * Handles PATCH requests to /cards/:id.
-   * Updates a card's content.
-   * @param id The ID of the card to update.
-   * @param updateCardDto The DTO with the updated data.
-   * @returns The updated card document.
+   * Updates a card owned by the authenticated user.
    */
   @Patch(':id')
   update(
     @Param('id') id: string,
     @Body(new ValidationPipe()) updateCardDto: UpdateCardDto,
+    @Request() req,
   ) {
-    return this.cardsService.update(id, updateCardDto);
+    return this.cardsService.update(id, updateCardDto, req.user.userId);
   }
 
   /**
    * Handles DELETE requests to /cards/:id.
-   * Deletes a card by its ID.
-   * @param id The ID of the card to delete.
+   * Deletes a card owned by the authenticated user.
    */
   @Delete(':id')
-  delete(@Param('id') id: string) {
-    return this.cardsService.delete(id);
+  delete(@Param('id') id: string, @Request() req) {
+    return this.cardsService.delete(id, req.user.userId);
   }
 }

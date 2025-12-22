@@ -8,17 +8,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const boxes_module_1 = require("./boxes/boxes.module");
 const cards_module_1 = require("./cards/cards.module");
-const database_module_1 = require("./database/database.module");
 const subjects_module_1 = require("./subjects/subjects.module");
 const tags_module_1 = require("./tags/tags.module");
+const auth_module_1 = require("./auth/auth.module");
+const users_module_1 = require("./users/users.module");
+const database_module_1 = require("./database/database.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [database_module_1.DatabaseModule, boxes_module_1.BoxesModule, cards_module_1.CardsModule, tags_module_1.TagsModule, subjects_module_1.SubjectsModule],
+        imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
+            database_module_1.DatabaseModule,
+            auth_module_1.AuthModule,
+            users_module_1.UsersModule,
+            boxes_module_1.BoxesModule,
+            cards_module_1.CardsModule,
+            tags_module_1.TagsModule,
+            subjects_module_1.SubjectsModule,
+        ],
         controllers: [],
         providers: [],
     })

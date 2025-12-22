@@ -8,11 +8,11 @@ export declare class CardsService {
     private cardModel;
     private readonly boxesService;
     constructor(cardModel: Model<CardDocument>, boxesService: BoxesService);
-    create(createCardDto: CreateCardDto): Promise<Card>;
-    findAll(tagIds?: string[], subjectId?: string): Promise<Card[]>;
-    handleReview(reviewCardDto: ReviewCardDto): Promise<Card>;
-    update(cardId: string, updateCardDto: UpdateCardDto): Promise<Card>;
-    delete(cardId: string): Promise<{
+    create(createCardDto: CreateCardDto, userId: string): Promise<Card>;
+    findAll(userId: string, tagIds?: string[], subjectId?: string): Promise<Card[]>;
+    handleReview(reviewCardDto: ReviewCardDto, userId: string): Promise<Card>;
+    update(cardId: string, updateCardDto: UpdateCardDto, userId: string): Promise<Card>;
+    delete(cardId: string, userId: string): Promise<{
         deleted: boolean;
         _id: string;
     }>;

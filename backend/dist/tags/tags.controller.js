@@ -16,44 +16,49 @@ exports.TagsController = void 0;
 const common_1 = require("@nestjs/common");
 const tags_service_1 = require("./tags.service");
 const create_tag_dto_1 = require("./dto/create-tag.dto");
+const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
 let TagsController = class TagsController {
     tagsService;
     constructor(tagsService) {
         this.tagsService = tagsService;
     }
-    create(createTagDto) {
-        return this.tagsService.create(createTagDto);
+    create(createTagDto, req) {
+        return this.tagsService.create(createTagDto, req.user.userId);
     }
-    findAll(subjectId) {
-        return this.tagsService.findAll(subjectId);
+    findAll(subjectId, req) {
+        return this.tagsService.findAll(req.user.userId, subjectId);
     }
-    delete(id) {
-        return this.tagsService.delete(id);
+    delete(id, req) {
+        return this.tagsService.delete(id, req.user.userId);
     }
 };
 exports.TagsController = TagsController;
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)(new common_1.ValidationPipe())),
+    __param(1, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [create_tag_dto_1.CreateTagDto]),
+    __metadata("design:paramtypes", [create_tag_dto_1.CreateTagDto, Object]),
     __metadata("design:returntype", void 0)
 ], TagsController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)('subjectId')),
+    __param(1, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], TagsController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Request)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], TagsController.prototype, "delete", null);
 exports.TagsController = TagsController = __decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Controller)('tags'),
     __metadata("design:paramtypes", [tags_service_1.TagsService])
 ], TagsController);

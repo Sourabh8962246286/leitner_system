@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // UI Elements
     const leitnerContainer = document.getElementById('leitner-container');
@@ -36,6 +35,32 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeTagFilters = new Set();
     let currentReviewCard = null;
     let draggedCard = null;
+
+    // --- Auth Wrapper for fetch ---
+    async function fetchWithAuth(url, options = {}) {
+        const token = window.auth.getToken();
+        
+        const headers = {
+            'Content-Type': 'application/json',
+            ...options.headers,
+        };
+
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
+        }
+
+        const response = await fetch(url, { ...options, headers });
+
+        if (response.status === 401) {
+            // TODO: Implement token refresh logic here
+            console.error('Authentication error: Token might be expired.');
+            window.auth.logout(); // Simple logout for now
+            return; // Stop further execution
+        }
+        
+        return response;
+    }
+
 
     // --- Main Functions ---
 
@@ -106,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchBoxes() {
         try {
-            const response = await fetch(`${API_BASE_URL}/boxes`);
+            const response = await fetchWithAuth(`${API_BASE_URL}/boxes`);
             if (!response.ok) throw new Error('Failed to fetch boxes');
             boxes = await response.json();
             renderBoxes();
@@ -120,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const url = activeSubjectId 
                 ? `${API_BASE_URL}/tags?subjectId=${activeSubjectId}`
                 : `${API_BASE_URL}/tags`;
-            const response = await fetch(url);
+            const response = await fetchWithAuth(url);
             if (!response.ok) throw new Error('Failed to fetch tags');
             tags = await response.json();
             renderAllTagElements();
@@ -140,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 params.append('subjectId', activeSubjectId);
             }
             const url = `${API_BASE_URL}/cards?${params.toString()}`;
-            const response = await fetch(url);
+            const response = await fetchWithAuth(url);
             if (!response.ok) throw new Error('Failed to fetch cards');
             cards = await response.json();
             renderCards();
@@ -279,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         select.addEventListener('change', async () => {
             const subjectId = select.value;
             if (subjectId) {
-                const response = await fetch(`${API_BASE_URL}/tags?subjectId=${subjectId}`);
+                const response = await fetchWithAuth(`${API_BASE_URL}/tags?subjectId=${subjectId}`);
                 const subjectTags = await response.json();
                 renderTagCheckboxes(cardTagsContainer, subjectTags);
             } else {
@@ -430,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
         editTagsContainer.className = 'card-tags-edit';
         
         // Fetch the tags for the specific subject of the card
-        const response = await fetch(`${API_BASE_URL}/tags?subjectId=${card.subjectId}`);
+        const response = await fetchWithAuth(`${API_BASE_URL}/tags?subjectId=${card.subjectId}`);
         const cardSubjectTags = await response.json();
 
         renderTagCheckboxes(editTagsContainer, cardSubjectTags, card.tags);
@@ -607,9 +632,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     async function createCard(cardData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/cards`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/cards`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(cardData),
             });
             if (!response.ok) throw new Error('Failed to create card');
@@ -621,9 +645,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     async function updateCard(cardId, cardData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/cards/${cardId}`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/cards/${cardId}`, {
                 method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(cardData),
             });
             if (!response.ok) throw new Error('Failed to update card');
@@ -635,7 +658,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function deleteCard(cardId) {
        try {
-            const response = await fetch(`${API_BASE_URL}/cards/${cardId}`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/cards/${cardId}`, {
                 method: 'DELETE',
             });
             if (!response.ok) throw new Error('Failed to delete card');
@@ -647,9 +670,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function createTag(tagData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/tags`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/tags`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(tagData),
             });
             if (!response.ok) throw new Error('Failed to create tag');
@@ -661,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function deleteTag(tagId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/tags/${tagId}`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/tags/${tagId}`, {
                 method: 'DELETE',
             });
             if (!response.ok) throw new Error('Failed to delete tag');
@@ -673,7 +695,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchSubjects() {
         try {
-            const response = await fetch(`${API_BASE_URL}/subjects`);
+            const response = await fetchWithAuth(`${API_BASE_URL}/subjects`);
             if (!response.ok) throw new Error('Failed to fetch subjects');
             subjects = await response.json();
             renderSubjects();
@@ -684,9 +706,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function createSubject(subjectData) {
         try {
-            const response = await fetch(`${API_BASE_URL}/subjects`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/subjects`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(subjectData),
             });
             if (!response.ok) throw new Error('Failed to create subject');
@@ -698,7 +719,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function deleteSubject(subjectId) {
         try {
-            const response = await fetch(`${API_BASE_URL}/subjects/${subjectId}`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/subjects/${subjectId}`, {
                 method: 'DELETE',
             });
             if (!response.ok) {
@@ -715,9 +736,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function handleCardReview(cardId, isCorrect) {
         try {
-            const response = await fetch(`${API_BASE_URL}/cards/review`, {
+            const response = await fetchWithAuth(`${API_BASE_URL}/cards/review`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ cardId, isCorrect }),
             });
             if (!response.ok) throw new Error('Failed to review card');
