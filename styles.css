@@ -411,3 +411,82 @@ h1, h2 {
     transform: scale(1.05);
 }
 
+/* --- Box Header and Info Icon --- */
+.box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 10px; /* Replaces padding on h3 */
+}
+
+.box-header h3 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.1em;
+    color: #007bff;
+}
+
+.info-icon {
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.box:hover .info-icon {
+    opacity: 1; /* Show on box hover */
+}
+
+/* Tooltip styles */
+.info-icon .tooltip {
+    visibility: hidden;
+    width: 140px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -75px; /* Center tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.info-icon .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.info-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Adjust original .box h3 to avoid conflict */
+.box > h3 {
+    display: none;
+}

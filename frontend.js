@@ -158,7 +158,28 @@ document.addEventListener('DOMContentLoaded', () => {
             boxElement.className = 'box';
             boxElement.dataset.boxId = box._id;
             boxElement.dataset.level = box.level;
-            boxElement.innerHTML = `<h3>${box.title}</h3>`;
+
+            // Create a header for title and info icon
+            const boxHeader = document.createElement('div');
+            boxHeader.className = 'box-header';
+
+            const title = document.createElement('h3');
+            title.textContent = box.title;
+
+            // Create info icon and tooltip
+            const infoIcon = document.createElement('div');
+            infoIcon.className = 'info-icon';
+            infoIcon.textContent = 'i';
+            
+            const tooltip = document.createElement('span');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = box.schedule.join(', '); // Join schedule array for display
+
+            infoIcon.appendChild(tooltip);
+            boxHeader.appendChild(title);
+            boxHeader.appendChild(infoIcon);
+            
+            boxElement.appendChild(boxHeader);
             leitnerContainer.appendChild(boxElement);
         });
     }
