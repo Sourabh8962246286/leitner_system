@@ -20,7 +20,7 @@ exports.TagsModule = TagsModule = __decorate([
         imports: [mongoose_1.MongooseModule.forFeature([{ name: tag_schema_1.Tag.name, schema: tag_schema_1.TagSchema }])],
         controllers: [tags_controller_1.TagsController],
         providers: [tags_service_1.TagsService],
-        exports: [tags_service_1.TagsService],
+        exports: [mongoose_1.MongooseModule],
     })
 ], TagsModule);
 //# sourceMappingURL=tags.module.js.map

@@ -9,7 +9,7 @@ export declare class CardsService {
     private readonly boxesService;
     constructor(cardModel: Model<CardDocument>, boxesService: BoxesService);
     create(createCardDto: CreateCardDto): Promise<Card>;
-    findAll(tagIds?: string[]): Promise<Card[]>;
+    findAll(tagIds?: string[], subjectId?: string): Promise<Card[]>;
     handleReview(reviewCardDto: ReviewCardDto): Promise<Card>;
     update(cardId: string, updateCardDto: UpdateCardDto): Promise<Card>;
     delete(cardId: string): Promise<{

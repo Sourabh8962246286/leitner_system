@@ -22,10 +22,10 @@ let TagsController = class TagsController {
         this.tagsService = tagsService;
     }
     create(createTagDto) {
-        return this.tagsService.create(createTagDto.name);
+        return this.tagsService.create(createTagDto);
     }
-    findAll() {
-        return this.tagsService.findAll();
+    findAll(subjectId) {
+        return this.tagsService.findAll(subjectId);
     }
     delete(id) {
         return this.tagsService.delete(id);
@@ -41,8 +41,9 @@ __decorate([
 ], TagsController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)('subjectId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], TagsController.prototype, "findAll", null);
 __decorate([

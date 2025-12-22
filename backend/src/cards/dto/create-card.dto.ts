@@ -15,6 +15,10 @@ export class CreateCardDto {
   @MinLength(1)
   back: string;
 
+  @IsMongoId()
+  @IsNotEmpty()
+  subjectId: string;
+
   @IsOptional()
   @IsArray()
   @IsMongoId({ each: true })

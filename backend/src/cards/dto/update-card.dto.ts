@@ -16,6 +16,10 @@ export class UpdateCardDto {
   @MinLength(1)
   back?: string;
 
+  @IsMongoId()
+  @IsOptional()
+  subjectId?: string;
+
   @IsOptional()
   @IsArray()
   @IsMongoId({ each: true })

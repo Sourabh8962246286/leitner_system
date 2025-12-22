@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Param, Delete, ValidationPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  ValidationPipe,
+  Query,
+} from '@nestjs/common';
 import { TagsService } from './tags.service';
 import { CreateTagDto } from './dto/create-tag.dto';
 
@@ -8,12 +17,12 @@ export class TagsController {
 
   @Post()
   create(@Body(new ValidationPipe()) createTagDto: CreateTagDto) {
-    return this.tagsService.create(createTagDto.name);
+    return this.tagsService.create(createTagDto);
   }
 
   @Get()
-  findAll() {
-    return this.tagsService.findAll();
+  findAll(@Query('subjectId') subjectId?: string) {
+    return this.tagsService.findAll(subjectId);
   }
 
   @Delete(':id')

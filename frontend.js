@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tagsList = document.getElementById('tags-list');
     const tagFilters = document.getElementById('tag-filters');
     const cardTagsContainer = document.getElementById('card-tags');
+    const cardSubjectSelector = document.getElementById('card-subject-selector');
     const createCardColorSelector = document.getElementById('create-card-color-selector');
     const modalOverlay = document.getElementById('modal-overlay');
     const createCardModal = document.getElementById('create-card-modal');
@@ -18,12 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const manageTagsModal = document.getElementById('manage-tags-modal');
     const openManageTagsBtn = document.getElementById('open-manage-tags-modal');
     const closeManageTagsBtn = manageTagsModal.querySelector('.close-btn'); // Use a specific close button for manageTagsModal
+    const manageSubjectsModal = document.getElementById('manage-subjects-modal');
+    const openManageSubjectsBtn = document.getElementById('open-manage-subjects-modal');
+    const closeManageSubjectsBtn = manageSubjectsModal.querySelector('.close-btn');
+    const createSubjectForm = document.getElementById('create-subject-form');
+    const subjectsList = document.getElementById('subjects-list');
+    const subjectFilter = document.getElementById('subject-filter');
 
     // State
     const API_BASE_URL = 'http://localhost:3000';
     let cards = [];
     let boxes = [];
     let tags = [];
+    let subjects = [];
+    let activeSubjectId = '';
     let activeTagFilters = new Set();
     let currentReviewCard = null;
     let draggedCard = null;
@@ -37,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function refreshUI() {
         await fetchBoxes();
+        await fetchSubjects();
         await fetchTags();
         await fetchCards();
         addDragAndDropListeners();
@@ -57,6 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
         openManageTagsBtn.addEventListener('click', () => openModal(manageTagsModal));
         closeManageTagsBtn.addEventListener('click', () => closeModal(manageTagsModal));
 
+        openManageSubjectsBtn.addEventListener('click', () => openModal(manageSubjectsModal));
+        closeManageSubjectsBtn.addEventListener('click', () => closeModal(manageSubjectsModal));
+        createSubjectForm.addEventListener('submit', handleCreateSubject);
+        subjectFilter.addEventListener('change', handleSubjectFilterChange);
+
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
                 // Close all modals if clicking outside
@@ -72,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Generic modal open/close functions
     function openModal(modalElement) {
         if (modalElement === createCardModal) {
+            renderCardSubjectSelector(cardSubjectSelector);
             renderColorSelector(createCardColorSelector);
         }
         modalOverlay.style.display = 'flex';
@@ -101,7 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchTags() {
         try {
-            const response = await fetch(`${API_BASE_URL}/tags`);
+            const url = activeSubjectId 
+                ? `${API_BASE_URL}/tags?subjectId=${activeSubjectId}`
+                : `${API_BASE_URL}/tags`;
+            const response = await fetch(url);
             if (!response.ok) throw new Error('Failed to fetch tags');
             tags = await response.json();
             renderAllTagElements();
@@ -112,8 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchCards() {
         try {
-            const filterQuery = Array.from(activeTagFilters).join(',');
-            const url = filterQuery ? `${API_BASE_URL}/cards?tags=${filterQuery}` : `${API_BASE_URL}/cards`;
+            const tagFilterQuery = Array.from(activeTagFilters).join(',');
+            const params = new URLSearchParams();
+            if (tagFilterQuery) {
+                params.append('tags', tagFilterQuery);
+            }
+            if (activeSubjectId) {
+                params.append('subjectId', activeSubjectId);
+            }
+            const url = `${API_BASE_URL}/cards?${params.toString()}`;
             const response = await fetch(url);
             if (!response.ok) throw new Error('Failed to fetch cards');
             cards = await response.json();
@@ -152,10 +178,98 @@ document.addEventListener('DOMContentLoaded', () => {
         addDragAndDropListeners();
     }
     
+    function renderSubjects() {
+        subjectsList.innerHTML = '';
+        subjects.forEach(subject => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span>${subject.name}</span><button class="delete-subject-btn" data-subject-id="${subject._id}">x</button>`;
+            subjectsList.appendChild(li);
+        });
+        document.querySelectorAll('.delete-subject-btn').forEach(btn => {
+            btn.addEventListener('click', handleDeleteSubject);
+        });
+        renderSubjectFilter();
+    }
+
+    function renderSubjectFilter() {
+        const selectedValue = subjectFilter.value;
+        subjectFilter.innerHTML = '<option value="">All Subjects</option>';
+        subjects.forEach(subject => {
+            const option = document.createElement('option');
+            option.value = subject._id;
+            option.textContent = subject.name;
+            subjectFilter.appendChild(option);
+        });
+        subjectFilter.value = selectedValue;
+    }
+
+    function handleSubjectFilterChange() {
+        activeSubjectId = subjectFilter.value;
+        activeTagFilters.clear(); // Reset tag filters when subject changes
+        refreshUI();
+    }
+
+
+    async function handleCreateSubject(e) {
+        e.preventDefault();
+        const subjectNameInput = document.getElementById('subject-name');
+        const name = subjectNameInput.value;
+        if (!name) return;
+
+        await createSubject({ name });
+        subjectNameInput.value = '';
+        await fetchSubjects();
+    }
+
+    async function handleDeleteSubject(e) {
+        const subjectId = e.target.dataset.subjectId;
+        if (confirm('Are you sure you want to delete this subject? This action cannot be undone.')) {
+            await deleteSubject(subjectId);
+            await fetchSubjects(); // Refresh the list after deletion
+        }
+    }
+
     function renderAllTagElements() {
         renderTagList();
         renderTagFilters();
-        renderCardTagCheckboxes();
+        renderTagCheckboxes(cardTagsContainer, tags);
+    }
+
+    function renderCardSubjectSelector(container, selectedSubjectId = '') {
+        container.innerHTML = '<h4>Subject:</h4>';
+        const select = document.createElement('select');
+        select.id = 'card-subject';
+        select.required = true;
+        
+        subjects.forEach(subject => {
+            const option = document.createElement('option');
+            option.value = subject._id;
+            option.textContent = subject.name;
+            select.appendChild(option);
+        });
+
+        if (selectedSubjectId) {
+            select.value = selectedSubjectId;
+        } else if (activeSubjectId) {
+            select.value = activeSubjectId;
+        }
+
+        // When the subject changes, fetch and render the tags for that subject
+        select.addEventListener('change', async () => {
+            const subjectId = select.value;
+            if (subjectId) {
+                const response = await fetch(`${API_BASE_URL}/tags?subjectId=${subjectId}`);
+                const subjectTags = await response.json();
+                renderTagCheckboxes(cardTagsContainer, subjectTags);
+            } else {
+                renderTagCheckboxes(cardTagsContainer, []);
+            }
+        });
+
+        // Trigger the change event initially to load tags for the default subject
+        select.dispatchEvent(new Event('change'));
+
+        container.appendChild(select);
     }
 
     function renderColorSelector(container, selectedCardColor = '') {
@@ -214,9 +328,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function renderCardTagCheckboxes(cardTags = []) {
+    function renderCardTagCheckboxes(tagsToRender = [], cardTags = []) {
         cardTagsContainer.innerHTML = '<h4>Tags:</h4>';
-        tags.forEach(tag => {
+        if (!tagsToRender.length) return;
+        
+        tagsToRender.forEach(tag => {
             const isChecked = cardTags.includes(tag._id);
             const label = document.createElement('label');
             label.innerHTML = `<input type="checkbox" name="tags" value="${tag._id}" ${isChecked ? 'checked' : ''}>${tag.name}`;
@@ -272,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return cardElement;
     }
     
-    function toggleEditMode(cardElement, card) {
+    async function toggleEditMode(cardElement, card) {
         cardElement.classList.add('editing');
         cardElement.draggable = false;
         const front = cardElement.querySelector('.front');
@@ -285,20 +401,24 @@ document.addEventListener('DOMContentLoaded', () => {
         front.innerHTML = `<textarea class="edit-front">${originalFront}</textarea>`;
         back.innerHTML = `<textarea class="edit-back">${originalBack}</textarea>`;
         
+        const editSubjectContainer = document.createElement('div');
+        editSubjectContainer.className = 'card-subject-edit';
+        renderCardSubjectSelector(editSubjectContainer, card.subjectId);
+
         const editTagsContainer = document.createElement('div');
         editTagsContainer.className = 'card-tags-edit';
         
-        tags.forEach(tag => {
-            const isChecked = card.tags.includes(tag._id);
-            const label = document.createElement('label');
-            label.innerHTML = `<input type="checkbox" value="${tag._id}" ${isChecked ? 'checked' : ''}>${tag.name}`;
-            editTagsContainer.appendChild(label);
-        });
+        // Fetch the tags for the specific subject of the card
+        const response = await fetch(`${API_BASE_URL}/tags?subjectId=${card.subjectId}`);
+        const cardSubjectTags = await response.json();
+
+        renderTagCheckboxes(editTagsContainer, cardSubjectTags, card.tags);
         
         const editColorContainer = document.createElement('div');
         editColorContainer.className = 'card-color-edit';
         renderColorSelector(editColorContainer, card.color);
         
+        back.appendChild(editSubjectContainer);
         back.appendChild(editTagsContainer);
         back.appendChild(editColorContainer);
         back.style.display = 'block';
@@ -311,14 +431,27 @@ document.addEventListener('DOMContentLoaded', () => {
         actions.querySelector('.save-btn').addEventListener('click', async () => {
             const newFront = cardElement.querySelector('.edit-front').value;
             const newBack = cardElement.querySelector('.edit-back').value;
+            const newSubjectId = editSubjectContainer.querySelector('select').value;
             const selectedTags = Array.from(editTagsContainer.querySelectorAll('input:checked')).map(input => input.value);
             const selectedColor = editColorContainer.querySelector('.color-swatch.selected')?.dataset.color;
-            await updateCard(card._id, { front: newFront, back: newBack, tags: selectedTags, color: selectedColor });
+            await updateCard(card._id, { front: newFront, back: newBack, subjectId: newSubjectId, tags: selectedTags, color: selectedColor });
             await refreshUI();
         });
 
         actions.querySelector('.cancel-btn').addEventListener('click', () => {
             exitEditMode(cardElement, originalFront, originalBack);
+        });
+    }
+
+    function renderTagCheckboxes(container, tagsToRender = [], checkedTags = []) {
+        container.innerHTML = '<h4>Tags:</h4>';
+        if (!tagsToRender.length) return;
+        
+        tagsToRender.forEach(tag => {
+            const isChecked = checkedTags.includes(tag._id);
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" name="tags" value="${tag._id}" ${isChecked ? 'checked' : ''}>${tag.name}`;
+            container.appendChild(label);
         });
     }
 
@@ -400,12 +533,16 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const front = document.getElementById('card-front').value;
         const back = document.getElementById('card-back').value;
+        const subjectId = document.getElementById('card-subject').value;
         const selectedTags = Array.from(cardTagsContainer.querySelectorAll('input:checked')).map(input => input.value);
         const selectedColor = createCardColorSelector.querySelector('.color-swatch.selected')?.dataset.color;
         
-        if (!front || !back) return;
+        if (!front || !back || !subjectId) {
+            alert('Please fill out the front, back, and subject for the card.');
+            return;
+        }
         
-        await createCard({ front, back, tags: selectedTags, color: selectedColor });
+        await createCard({ front, back, subjectId, tags: selectedTags, color: selectedColor });
         
         createCardForm.reset();
         closeModal(createCardModal);
@@ -414,11 +551,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     async function handleCreateTag(e) {
         e.preventDefault();
+        if (!activeSubjectId) {
+            alert('Please select a subject first before creating a tag.');
+            return;
+        }
         const tagNameInput = document.getElementById('tag-name');
         const name = tagNameInput.value;
         if (!name) return;
 
-        await createTag({ name });
+        await createTag({ name, subjectId: activeSubjectId });
         tagNameInput.value = '';
         await fetchTags();
     }
@@ -508,6 +649,48 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(error);
         }
     }
+
+    async function fetchSubjects() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/subjects`);
+            if (!response.ok) throw new Error('Failed to fetch subjects');
+            subjects = await response.json();
+            renderSubjects();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async function createSubject(subjectData) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/subjects`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(subjectData),
+            });
+            if (!response.ok) throw new Error('Failed to create subject');
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async function deleteSubject(subjectId) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/subjects/${subjectId}`, {
+                method: 'DELETE',
+            });
+            if (!response.ok) {
+                const err = await response.json();
+                alert(err.message); // Show the specific error from the backend
+                throw new Error('Failed to delete subject');
+            }
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
 
     async function handleCardReview(cardId, isCorrect) {
         try {

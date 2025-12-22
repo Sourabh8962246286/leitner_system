@@ -26,9 +26,9 @@ let CardsController = class CardsController {
     create(createCardDto) {
         return this.cardsService.create(createCardDto);
     }
-    findAll(tags) {
+    findAll(tags, subjectId) {
         const tagIds = tags ? tags.split(',') : [];
-        return this.cardsService.findAll(tagIds);
+        return this.cardsService.findAll(tagIds, subjectId);
     }
     handleReview(reviewCardDto) {
         return this.cardsService.handleReview(reviewCardDto);
@@ -51,8 +51,9 @@ __decorate([
 __decorate([
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)('tags')),
+    __param(1, (0, common_1.Query)('subjectId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", void 0)
 ], CardsController.prototype, "findAll", null);
 __decorate([

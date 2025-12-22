@@ -22,12 +22,18 @@ let TagsService = class TagsService {
     constructor(tagModel) {
         this.tagModel = tagModel;
     }
-    async create(name) {
-        const newTag = new this.tagModel({ name });
+    async create(createTagDto) {
+        const { name, subjectId } = createTagDto;
+        const existingTag = await this.tagModel.findOne({ name, subjectId }).exec();
+        if (existingTag) {
+            throw new common_1.ConflictException(`Tag "${name}" already exists for this subject.`);
+        }
+        const newTag = new this.tagModel(createTagDto);
         return newTag.save();
     }
-    async findAll() {
-        return this.tagModel.find().exec();
+    async findAll(subjectId) {
+        const filter = subjectId ? { subjectId } : {};
+        return this.tagModel.find(filter).exec();
     }
     async delete(id) {
         const result = await this.tagModel.deleteOne({ _id: id }).exec();

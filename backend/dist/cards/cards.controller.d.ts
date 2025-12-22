@@ -6,7 +6,7 @@ export declare class CardsController {
     private readonly cardsService;
     constructor(cardsService: CardsService);
     create(createCardDto: CreateCardDto): Promise<import("./schemas/card.schema").Card>;
-    findAll(tags?: string): Promise<import("./schemas/card.schema").Card[]>;
+    findAll(tags?: string, subjectId?: string): Promise<import("./schemas/card.schema").Card[]>;
     handleReview(reviewCardDto: ReviewCardDto): Promise<import("./schemas/card.schema").Card>;
     update(id: string, updateCardDto: UpdateCardDto): Promise<import("./schemas/card.schema").Card>;
     delete(id: string): Promise<{

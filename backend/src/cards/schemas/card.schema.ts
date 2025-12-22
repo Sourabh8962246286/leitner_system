@@ -3,6 +3,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import * as mongoose from 'mongoose';
 import { Box } from '../../boxes/schemas/box.schema';
 import { Tag } from '../../tags/schemas/tag.schema';
+import { Subject } from '../../subjects/schemas/subject.schema';
 
 export type CardDocument = Card & mongoose.Document;
 
@@ -21,6 +22,13 @@ export class Card {
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Box', required: true })
   currentBoxId: Box;
+
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Subject',
+    required: true,
+  })
+  subjectId: Subject;
 
   @Prop()
   lastReviewed: Date;

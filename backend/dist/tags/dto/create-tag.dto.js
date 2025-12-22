@@ -13,6 +13,7 @@ exports.CreateTagDto = void 0;
 const class_validator_1 = require("class-validator");
 class CreateTagDto {
     name;
+    subjectId;
 }
 exports.CreateTagDto = CreateTagDto;
 __decorate([
@@ -21,4 +22,9 @@ __decorate([
     (0, class_validator_1.MinLength)(1),
     __metadata("design:type", String)
 ], CreateTagDto.prototype, "name", void 0);
+__decorate([
+    (0, class_validator_1.IsMongoId)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateTagDto.prototype, "subjectId", void 0);
 //# sourceMappingURL=create-tag.dto.js.map

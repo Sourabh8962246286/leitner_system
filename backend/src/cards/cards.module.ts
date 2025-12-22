@@ -12,5 +12,6 @@ import { Card, CardSchema } from './schemas/card.schema';
   ],
   controllers: [CardsController],
   providers: [CardsService],
+  exports: [MongooseModule],
 })
 export class CardsModule {}

@@ -25,13 +25,14 @@ export class CardsController {
 
   /**
    * Handles GET requests to /cards.
-   * Returns a list of all cards, optionally filtered by tags.
+   * Returns a list of all cards, optionally filtered by tags and subject.
    * @param tags A comma-separated string of tag IDs.
+   * @param subjectId The ID of the subject to filter by.
    */
   @Get()
-  findAll(@Query('tags') tags?: string) {
+  findAll(@Query('tags') tags?: string, @Query('subjectId') subjectId?: string) {
     const tagIds = tags ? tags.split(',') : [];
-    return this.cardsService.findAll(tagIds);
+    return this.cardsService.findAll(tagIds, subjectId);
   }
 
   /**

@@ -38,14 +38,18 @@ export class CardsService {
   }
 
   /**
-   * Retrieves all cards from the database, optionally filtered by tags.
+   * Retrieves all cards from the database, optionally filtered by tags and subject.
    * @param tagIds An array of tag IDs to filter by.
+   * @param subjectId An ID of a subject to filter by.
    * @returns A promise that resolves to an array of all cards.
    */
-  async findAll(tagIds?: string[]): Promise<Card[]> {
-    const filter = {};
+  async findAll(tagIds?: string[], subjectId?: string): Promise<Card[]> {
+    const filter: any = {};
     if (tagIds && tagIds.length > 0) {
-      filter['tags'] = { $all: tagIds };
+      filter.tags = { $all: tagIds };
+    }
+    if (subjectId) {
+      filter.subjectId = subjectId;
     }
     return this.cardModel.find(filter).exec();
   }

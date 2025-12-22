@@ -15,6 +15,7 @@
                 <form id="create-card-form">
                     <textarea id="card-front" placeholder="Front of card (Question)" required></textarea>
                     <textarea id="card-back" placeholder="Back of card (Answer)" required></textarea>
+                                <div id="card-subject-selector"></div>
                                 <div id="card-tags"></div>
                                 <div id="create-card-color-selector" class="color-selector-tray">
                                     <!-- Color swatches will be dynamically inserted here -->
@@ -33,12 +34,31 @@
                 <ul id="tags-list"></ul>
             </div>
         </div>
+        <div id="manage-subjects-modal" class="modal">
+            <button class="close-btn">&times;</button>
+            <div id="manage-subjects-area">
+                <h2>Manage Subjects</h2>
+                <form id="create-subject-form">
+                    <input type="text" id="subject-name" placeholder="New subject name" required />
+                    <button type="submit">Create Subject</button>
+                </form>
+                <ul id="subjects-list"></ul>
+            </div>
+        </div>
     </div>
 
     <h1>Leitner System</h1>
     <div class="main-actions">
         <button id="open-create-card-modal">Create New Card</button>
         <button id="open-manage-tags-modal">Manage Tags</button>
+        <button id="open-manage-subjects-modal">Manage Subjects</button>
+    </div>
+
+    <div id="filter-subjects-area">
+        <h2>Filter by Subject</h2>
+        <select id="subject-filter">
+            <option value="">All Subjects</option>
+        </select>
     </div>
 
     <div id="filter-tags-area">

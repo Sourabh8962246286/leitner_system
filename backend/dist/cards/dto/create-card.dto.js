@@ -14,6 +14,7 @@ const class_validator_1 = require("class-validator");
 class CreateCardDto {
     front;
     back;
+    subjectId;
     tags;
     color;
 }
@@ -30,6 +31,11 @@ __decorate([
     (0, class_validator_1.MinLength)(1),
     __metadata("design:type", String)
 ], CreateCardDto.prototype, "back", void 0);
+__decorate([
+    (0, class_validator_1.IsMongoId)(),
+    (0, class_validator_1.IsNotEmpty)(),
+    __metadata("design:type", String)
+], CreateCardDto.prototype, "subjectId", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsArray)(),

@@ -36,10 +36,13 @@ let CardsService = class CardsService {
         });
         return newCard.save();
     }
-    async findAll(tagIds) {
+    async findAll(tagIds, subjectId) {
         const filter = {};
         if (tagIds && tagIds.length > 0) {
-            filter['tags'] = { $all: tagIds };
+            filter.tags = { $all: tagIds };
+        }
+        if (subjectId) {
+            filter.subjectId = subjectId;
         }
         return this.cardModel.find(filter).exec();
     }
