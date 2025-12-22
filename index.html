@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitner System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="modal-overlay">
+        <div id="create-card-modal" class="modal">
+            <button class="close-btn">&times;</button>
+            <div class="create-card-area">
+                <h2>Create New Card</h2>
+                <form id="create-card-form">
+                    <textarea id="card-front" placeholder="Front of card (Question)" required></textarea>
+                    <textarea id="card-back" placeholder="Back of card (Answer)" required></textarea>
+                                <div id="card-tags"></div>
+                                <div id="create-card-color-selector" class="color-selector-tray">
+                                    <!-- Color swatches will be dynamically inserted here -->
+                                </div>
+                                <button type="submit">Create Card</button>                </form>
+            </div>
+        </div>
+        <div id="manage-tags-modal" class="modal">
+            <button class="close-btn">&times;</button>
+            <div id="manage-tags-area">
+                <h2>Manage Tags</h2>
+                <form id="create-tag-form">
+                    <input type="text" id="tag-name" placeholder="New tag name" required />
+                    <button type="submit">Create Tag</button>
+                </form>
+                <ul id="tags-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <h1>Leitner System</h1>
+    <div class="main-actions">
+        <button id="open-create-card-modal">Create New Card</button>
+        <button id="open-manage-tags-modal">Manage Tags</button>
+    </div>
+
+    <div id="filter-tags-area">
+        <h2>Filter by Tags</h2>
+        <div id="tag-filters"></div>
+    </div>
+
+    <div id="leitner-container" class="leitner-container">
+        <!-- Boxes will be dynamically inserted here -->
+    </div>
+    <div id="card-staging-area" class="card-staging-area">
+        <h2>Review Area</h2>
+        <div id="card-to-review" class="card-to-review">
+            <!-- The current card for review will be placed here -->
+        </div>
+        <div class="review-buttons">
+            <button id="correct-btn">Correct</button>
+            <button id="incorrect-btn">Incorrect</button>
+        </div>
+    </div>
+    <script src="constants.js"></script>
+    <script src="frontend.js"></script>
+</body>
+</html>
