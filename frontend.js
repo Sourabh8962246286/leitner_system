@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjectFilter = document.getElementById('subject-filter');
 
     // State
-    const API_BASE_URL = 'http://localhost:3000';
+    const API_BASE_URL = 'https://leitner-system-2hz1.onrender.com';
     let cards = [];
     let boxes = [];
     let tags = [];
