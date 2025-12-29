@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://leitner-system-2hz1.onrender.com';
 const TOKEN_KEY = 'leitner_access_token';
 
 document.addEventListener('DOMContentLoaded', () => {
