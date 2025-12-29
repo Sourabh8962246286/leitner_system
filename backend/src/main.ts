@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Enable CORS for frontend interaction
   app.enableCors({
-    origin: 'https://sparkling-brioche-18b52b.netlify.app/', // Adjust this in production to restrict allowed origins
+    origin: '*', // Adjust this in production to restrict allowed origins
   });
 
   // Use a global pipe to enforce validation rules on all incoming client payloads
