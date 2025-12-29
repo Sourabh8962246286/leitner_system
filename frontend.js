@@ -20,49 +20,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const createSubjectForm = document.getElementById('create-subject-form');
     const subjectsList = document.getElementById('subjects-list');
     const subjectFilter = document.getElementById('subject-filter');
+    const loader = document.getElementById('loader');
 
     // State
     const API_BASE_URL = 'https://leitner-system-2hz1.onrender.com';
     let cards = [];
     let boxes = [];
-    let tags = [];
-    let subjects = [];
-    let activeSubjectId = '';
-    let activeTagFilters = new Set();
-    let currentReviewCard = null;
-    let draggedCard = null;
-
-    // --- Auth Wrapper for fetch ---
-    async function fetchWithAuth(url, options = {}) {
-        const token = window.auth.getToken();
-        
-        const headers = {
-            'Content-Type': 'application/json',
-            ...options.headers,
-        };
-
-        if (token) {
-            headers['Authorization'] = `Bearer ${token}`;
-        }
-
-        const response = await fetch(url, { ...options, headers });
-
-        if (response.status === 401) {
-            // TODO: Implement token refresh logic here
-            console.error('Authentication error: Token might be expired.');
-            window.auth.logout(); // Simple logout for now
-            return; // Stop further execution
-        }
-        
-        return response;
-    }
-
-
+~
     // --- Main Functions ---
 
     async function initializeApp() {
-        addEventListeners();
-        await refreshUI();
+        const loader = document.getElementById('loader');
+        try {
+            loader.style.display = 'flex';
+            addEventListeners();
+            await refreshUI();
+        } catch (error) {
+            console.error("Failed to initialize app:", error);
+            // Optionally display an error message to the user on the page
+        } finally {
+            // This will always run, even if there's an error
+            loader.style.display = 'none';
+        }
     }
 
     async function refreshUI() {
