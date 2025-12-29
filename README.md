@@ -1,14 +1,14 @@
 # Leitner System Revision Application
 
-This project is a simple, single-user implementation of a Leitner system for spaced repetition learning. It is built with a NestJS backend and a vanilla JavaScript frontend.
+This project is a multi-user implementation of a Leitner system for spaced repetition learning. It is built with a NestJS backend and a vanilla JavaScript frontend, with a secure JWT-based authentication system.
 
 ## 1. Project Overview
 
-The application allows users to manage flashcards across a series of boxes, organized by **Subjects**. The core logic follows the Leitner system:
+The application allows users to register, log in, and manage their own private collection of flashcards. Each user's data (subjects, cards, tags) is completely isolated from other users.
+
+The core logic follows the Leitner system:
 - **Correctly answered cards** are moved to the next box (level n+1).
 - **Incorrectly answered cards** are moved back to the first box (level 1).
-
-The system includes features for creating, editing, and deleting cards and their associated subjects and tags. It also supports filtering cards by subject and tags.
 
 ### Box Structure
 The application is configured with 5 boxes, each with a different review cadence:
@@ -22,100 +22,133 @@ The application is configured with 5 boxes, each with a different review cadence
 
 ### Backend
 - **Framework:** NestJS
+- **Authentication:** JWT-based authentication using Passport.js.
 - **Database:** MongoDB with Mongoose for Object-Document Mapping.
 - **Design:** The backend follows a modular design pattern to separate concerns.
 
 #### Modules:
+- **`AuthModule`**: Handles user registration, login (issuing access and refresh tokens), and token refreshing.
+- **`UsersModule`**: Manages user creation and retrieval.
 - **`DatabaseModule`**: Handles the connection to the MongoDB database.
-- **`SubjectsModule`**: Manages the creation, retrieval, and deletion of subjects.
-- **`BoxesModule`**: Manages the logic related to the Leitner boxes.
-- **`CardsModule`**: Manages all logic for cards, including creation, review, updates, and association with subjects and tags.
-- **`TagsModule`**: Manages the creation, retrieval, and deletion of tags, scoped to a specific subject.
+- **`SubjectsModule`**: Manages creation, retrieval, and deletion of subjects for the authenticated user.
+- **`BoxesModule`**: Manages the logic related to the Leitner boxes (shared across users).
+- **`CardsModule`**: Manages all logic for cards for the authenticated user.
+- **`TagsModule`**: Manages creation, retrieval, and deletion of tags for the authenticated user.
 
 ### Frontend
 - **Technology:** Vanilla JavaScript, HTML5, and CSS3.
-- **UI:** A single-page interface that dynamically renders subjects, boxes, cards, and management forms.
+- **UI:** A single-page interface that dynamically renders a user's subjects, boxes, cards, and management forms. Includes separate pages for login and registration.
 - **Features:**
-    - UI section for managing subjects.
-    - A main dropdown to filter the view by subject.
-    - Drag-and-drop cards between boxes.
-    - Click-to-review cards.
-    - A modal form for creating new cards with subject, tags, and color.
-    - UI sections for managing tags within a subject.
+    - Secure login and registration pages.
+    - All API requests are authenticated using JWT.
+    - Automatic redirect to login page if not authenticated.
+    - Logout functionality.
 
 ## 3. API Structure
 
-All endpoints are prefixed with the module name (e.g., `/cards`, `/boxes`, `/tags`, `/subjects`).
+### Auth API (`/auth`)
+- `POST /register`: Creates a new user. Requires `name`, `email`, `phoneNumber`, and `password`.
+- `POST /login`: Authenticates a user and returns a JWT `access_token` and `refresh_token`.
+- `POST /refresh`: Returns a new `access_token` using a valid `refresh_token`.
 
-### Subjects API (`/subjects`)
-- `GET /`: Retrieves all subjects.
-- `POST /`: Creates a new subject.
-- `DELETE /:id`: Deletes a subject. Fails if cards are still assigned to the subject.
+### Subjects API (`/subjects`) - Protected
+- `GET /`: Retrieves all subjects for the authenticated user.
+- `POST /`: Creates a new subject for the authenticated user.
+- `DELETE /:id`: Deletes a subject owned by the authenticated user.
 
-### Boxes API (`/boxes`)
+### Boxes API (`/boxes`) - Protected
 - `GET /`: Retrieves all boxes, sorted by level.
 
-### Cards API (`/cards`)
-- `POST /`: Creates a new card (requires a `subjectId`).
-- `GET /`: Retrieves all cards. Can be filtered by `subjectId` and/or `tags` via query parameters (e.g., `?subjectId=...&tags=id1,id2`).
-- `PATCH /:id`: Updates the content (front, back, subject, tags, color) of a specific card.
-- `DELETE /:id`: Deletes a specific card.
-- `POST /review`: Handles a card review, moving it to the appropriate box.
+### Cards API (`/cards`) - Protected
+- `POST /`: Creates a new card for the authenticated user.
+- `GET /`: Retrieves all cards for the authenticated user. Can be filtered.
+- `PATCH /:id`: Updates a card owned by the authenticated user.
+- `DELETE /:id`: Deletes a card owned by the authenticated user.
+- `POST /review`: Handles a card review for the authenticated user.
 
-### Tags API (`/tags`)
-- `POST /`: Creates a new tag (requires a `subjectId`).
-- `GET /`: Retrieves all existing tags. Can be filtered by `subjectId` (e.g., `?subjectId=...`).
-- `DELETE /:id`: Deletes a specific tag.
+### Tags API (`/tags`) - Protected
+- `POST /`: Creates a new tag for the authenticated user.
+- `GET /`: Retrieves all tags for the authenticated user. Can be filtered.
+- `DELETE /:id`: Deletes a tag owned by the authenticated user.
 
 ## 4. Data Models
 
+### User Schema (`user.schema.ts`)
+- `name`: `String`
+- `email`: `String` - Unique
+- `phoneNumber`: `String` - Unique
+- `password`: `String` - Hashed
+
 ### Subject Schema (`subject.schema.ts`)
-- `name`: `String` - The unique name of the subject.
+- `name`: `String` - Unique per user.
+- `userId`: `ObjectId` - Reference to the `User`.
 
 ### Box Schema (`box.schema.ts`)
-- `title`: `String` - The name of the box (e.g., "Box 1").
-- `schedule`: `[String]` - The review schedule (e.g., `['Everyday']`).
-- `level`: `Number` - The level of the box, used to determine the sequence.
+- `title`: `String`
+- `schedule`: `[String]`
+- `level`: `Number`
 
 ### Card Schema (`card.schema.ts`)
-- `front`: `String` - The question or front side of the card.
-- `back`: `String` - The answer or back side of the card.
-- `subjectId`: `ObjectId` - A reference to the `Subject` the card belongs to.
-- `currentBoxId`: `ObjectId` - A reference to the `Box` the card is currently in.
-- `lastReviewed`: `Date` - The date the card was last reviewed.
-- `tags`: `[ObjectId]` - An array of references to `Tag` documents.
-- `color`: `String` - An optional hex color code for the card background.
+- `front`: `String`
+- `back`: `String`
+- `subjectId`: `ObjectId`
+- `currentBoxId`: `ObjectId`
+- `lastReviewed`: `Date`
+- `tags`: `[ObjectId]`
+- `color`: `String`
+- `userId`: `ObjectId` - Reference to the `User`.
 
 ### Tag Schema (`tag.schema.ts`)
-- `name`: `String` - The name of the tag (unique within its subject).
-- `subjectId`: `ObjectId` - A reference to the parent `Subject`.
+- `name`: `String` - Unique per user and subject.
+- `subjectId`: `ObjectId`
+- `userId`: `ObjectId` - Reference to the `User`.
 
 ## 5. Setup and Running the Application
 
 ### Prerequisites
-- Node.js
-- npm
-- MongoDB running on `mongodb://localhost/leitner-system`
+- Node.js & npm
+- MongoDB
+- `http-server` (or any other local web server for the frontend)
 
 ### Instructions
 1.  **Navigate to the backend directory:**
     ```bash
     cd backend
     ```
-2.  **Install dependencies:**
+2.  **Create an environment file:**
+    Create a file named `.env` in the `backend` directory and populate it with the following content. **Remember to change the secret keys.**
+    ```
+    # JWT
+    JWT_ACCESS_TOKEN_SECRET=your-super-secret-access-token-key-change-me
+    JWT_ACCESS_TOKEN_EXPIRATION_TIME=1800
+    JWT_REFRESH_TOKEN_SECRET=your-super-secret-refresh-token-key-change-me
+    JWT_REFRESH_TOKEN_EXPIRATION_TIME=2592000
+
+    # MongoDB
+    MONGO_URI=mongodb://localhost/leitner-system
+    ```
+3.  **Install backend dependencies:**
     ```bash
     npm install
     ```
-3.  **Seed the database (optional):**
-    This will create 5 boxes and one sample card.
+4.  **Seed the database (optional):**
+    This will create the 5 default boxes.
     ```bash
     npm run seed
     ```
-4.  **Start the backend server:**
+5.  **Start the backend server:**
     ```bash
     npm run start:dev
     ```
     The server will run on `http://localhost:3000`.
 
-5.  **Open the frontend:**
-    Open the `index.html` file (in the project root) in your web browser.
+6.  **Serve the frontend:**
+    From the **project root** directory (`leitnerApp`), run a local web server.
+    ```bash
+    # Install http-server if you haven't already
+    # npm install -g http-server
+    
+    http-server .
+    ```
+7.  **Open the application in your browser:**
+    Navigate to `http://localhost:8080` (or the URL provided by `http-server`). You will be directed to the login page.

@@ -11,16 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardTagsContainer = document.getElementById('card-tags');
     const cardSubjectSelector = document.getElementById('card-subject-selector');
     const createCardColorSelector = document.getElementById('create-card-color-selector');
-    const modalOverlay = document.getElementById('modal-overlay');
-    const createCardModal = document.getElementById('create-card-modal');
-    const openCreateCardBtn = document.getElementById('open-create-card-modal');
-    const closeCreateCardBtn = createCardModal.querySelector('.close-btn'); // Use a specific close button for createCardModal
-    const manageTagsModal = document.getElementById('manage-tags-modal');
-    const openManageTagsBtn = document.getElementById('open-manage-tags-modal');
-    const closeManageTagsBtn = manageTagsModal.querySelector('.close-btn'); // Use a specific close button for manageTagsModal
-    const manageSubjectsModal = document.getElementById('manage-subjects-modal');
-    const openManageSubjectsBtn = document.getElementById('open-manage-subjects-modal');
-    const closeManageSubjectsBtn = manageSubjectsModal.querySelector('.close-btn');
+    const createCardModalEl = document.getElementById('create-card-modal');
+    const manageTagsModalEl = document.getElementById('manage-tags-modal');
+    const manageSubjectsModalEl = document.getElementById('manage-subjects-modal');
+    const createCardModal = new bootstrap.Modal(createCardModalEl);
+    const manageTagsModal = new bootstrap.Modal(manageTagsModalEl);
+    const manageSubjectsModal = new bootstrap.Modal(manageSubjectsModalEl);
     const createSubjectForm = document.getElementById('create-subject-form');
     const subjectsList = document.getElementById('subjects-list');
     const subjectFilter = document.getElementById('subject-filter');
@@ -86,45 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
         createCardForm.addEventListener('submit', handleCreateCard);
         createTagForm.addEventListener('submit', handleCreateTag);
         
-        openCreateCardBtn.addEventListener('click', () => openModal(createCardModal));
-        closeCreateCardBtn.addEventListener('click', () => closeModal(createCardModal));
-
-        openManageTagsBtn.addEventListener('click', () => openModal(manageTagsModal));
-        closeManageTagsBtn.addEventListener('click', () => closeModal(manageTagsModal));
-
-        openManageSubjectsBtn.addEventListener('click', () => openModal(manageSubjectsModal));
-        closeManageSubjectsBtn.addEventListener('click', () => closeModal(manageSubjectsModal));
-        createSubjectForm.addEventListener('submit', handleCreateSubject);
-        subjectFilter.addEventListener('change', handleSubjectFilterChange);
-
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                // Close all modals if clicking outside
-                document.querySelectorAll('.modal').forEach(modal => {
-                    if (modal.style.display === 'block') { // Check if modal is actually open
-                        closeModal(modal);
-                    }
-                });
-            }
-        });
-    }
-
-    // Generic modal open/close functions
-    function openModal(modalElement) {
-        if (modalElement === createCardModal) {
+        createCardModalEl.addEventListener('show.bs.modal', () => {
             renderCardSubjectSelector(cardSubjectSelector);
             renderColorSelector(createCardColorSelector);
-        }
-        modalOverlay.style.display = 'flex';
-        modalElement.style.display = 'block';
-    }
+        });
 
-    function closeModal(modalElement) {
-        modalElement.style.display = 'none';
-        const anyModalOpen = document.querySelector('.modal[style*="display: block"]');
-        if (!anyModalOpen) {
-            modalOverlay.style.display = 'none';
-        }
+        createSubjectForm.addEventListener('submit', handleCreateSubject);
+        subjectFilter.addEventListener('change', handleSubjectFilterChange);
     }
     
     // --- Data Fetching ---
@@ -228,10 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
         subjectsList.innerHTML = '';
         subjects.forEach(subject => {
             const li = document.createElement('li');
-            li.innerHTML = `<span>${subject.name}</span><button class="delete-subject-btn" data-subject-id="${subject._id}">x</button>`;
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.innerHTML = `<span>${subject.name}</span><button class="btn-close" data-subject-id="${subject._id}"></button>`;
             subjectsList.appendChild(li);
         });
-        document.querySelectorAll('.delete-subject-btn').forEach(btn => {
+        document.querySelectorAll('.btn-close').forEach(btn => {
             btn.addEventListener('click', handleDeleteSubject);
         });
         renderSubjectFilter();
@@ -282,9 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderCardSubjectSelector(container, selectedSubjectId = '') {
-        container.innerHTML = '<h4>Subject:</h4>';
+        container.innerHTML = '<label for="card-subject" class="form-label">Subject</label>';
         const select = document.createElement('select');
         select.id = 'card-subject';
+        select.className = 'form-select';
         select.required = true;
         
         subjects.forEach(subject => {
@@ -319,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderColorSelector(container, selectedCardColor = '') {
-        container.innerHTML = '<h4>Color:</h4>';
+        container.innerHTML = '<h6>Color</h6>';
         const colorTray = document.createElement('div');
         colorTray.className = 'color-selector-tray';
 
@@ -354,7 +320,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tagsList.innerHTML = '';
         tags.forEach(tag => {
             const li = document.createElement('li');
-            li.innerHTML = `<span>${tag.name}</span><button class="delete-tag-btn" data-tag-id="${tag._id}">x</button>`;
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.innerHTML = `<span>${tag.name}</span><button class="btn-close delete-tag-btn" data-tag-id="${tag._id}"></button>`;
             tagsList.appendChild(li);
         });
         document.querySelectorAll('.delete-tag-btn').forEach(btn => {
@@ -365,9 +332,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderTagFilters() {
         tagFilters.innerHTML = '';
         tags.forEach(tag => {
-            const label = document.createElement('label');
-            label.innerHTML = `<input type="checkbox" value="${tag._id}">${tag.name}`;
-            tagFilters.appendChild(label);
+            const div = document.createElement('div');
+            div.className = 'form-check';
+            div.innerHTML = `<input class="form-check-input" type="checkbox" value="${tag._id}" id="tag-filter-${tag._id}">
+                             <label class="form-check-label" for="tag-filter-${tag._id}">${tag.name}</label>`;
+            tagFilters.appendChild(div);
         });
         tagFilters.querySelectorAll('input').forEach(checkbox => {
             checkbox.addEventListener('change', handleFilterChange);
@@ -375,14 +344,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderCardTagCheckboxes(tagsToRender = [], cardTags = []) {
-        cardTagsContainer.innerHTML = '<h4>Tags:</h4>';
+        cardTagsContainer.innerHTML = '<h6>Tags</h6>';
         if (!tagsToRender.length) return;
         
         tagsToRender.forEach(tag => {
             const isChecked = cardTags.includes(tag._id);
-            const label = document.createElement('label');
-            label.innerHTML = `<input type="checkbox" name="tags" value="${tag._id}" ${isChecked ? 'checked' : ''}>${tag.name}`;
-            cardTagsContainer.appendChild(label);
+            const div = document.createElement('div');
+            div.className = 'form-check form-check-inline';
+            div.innerHTML = `<input class="form-check-input" type="checkbox" name="tags" value="${tag._id}" id="card-tag-${tag._id}" ${isChecked ? 'checked' : ''}>
+                             <label class="form-check-label" for="card-tag-${tag._id}">${tag.name}</label>`;
+            cardTagsContainer.appendChild(div);
         });
     }
 
@@ -400,14 +371,14 @@ document.addEventListener('DOMContentLoaded', () => {
             : '';
 
         cardElement.innerHTML = `
-            <div class="card-content">
+            <div class="card-body">
                 <div class="front">${card.front}</div>
                 <div class="back">${card.back}</div>
-                <div class="card-tag-display">${tagNames}</div>
-            </div>
-            <div class="card-actions">
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
+                <div class="card-tag-display text-muted small">${tagNames}</div>
+                <div class="card-actions text-end mt-2">
+                    <button class="btn btn-sm btn-outline-secondary edit-btn">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger delete-btn">Delete</button>
+                </div>
             </div>
         `;
 
@@ -437,22 +408,23 @@ document.addEventListener('DOMContentLoaded', () => {
     async function toggleEditMode(cardElement, card) {
         cardElement.classList.add('editing');
         cardElement.draggable = false;
-        const front = cardElement.querySelector('.front');
-        const back = cardElement.querySelector('.back');
-        const actions = cardElement.querySelector('.card-actions');
+        const cardBody = cardElement.querySelector('.card-body');
+        const front = cardBody.querySelector('.front');
+        const back = cardBody.querySelector('.back');
+        const actions = cardBody.querySelector('.card-actions');
         
         const originalFront = front.textContent;
         const originalBack = back.textContent;
 
-        front.innerHTML = `<textarea class="edit-front">${originalFront}</textarea>`;
-        back.innerHTML = `<textarea class="edit-back">${originalBack}</textarea>`;
+        front.innerHTML = `<textarea class="form-control mb-2 edit-front">${originalFront}</textarea>`;
+        back.innerHTML = `<textarea class="form-control edit-back">${originalBack}</textarea>`;
         
         const editSubjectContainer = document.createElement('div');
-        editSubjectContainer.className = 'card-subject-edit';
+        editSubjectContainer.className = 'card-subject-edit my-3';
         renderCardSubjectSelector(editSubjectContainer, card.subjectId);
 
         const editTagsContainer = document.createElement('div');
-        editTagsContainer.className = 'card-tags-edit';
+        editTagsContainer.className = 'card-tags-edit mb-3';
         
         // Fetch the tags for the specific subject of the card
         const response = await fetchWithAuth(`${API_BASE_URL}/tags?subjectId=${card.subjectId}`);
@@ -461,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderTagCheckboxes(editTagsContainer, cardSubjectTags, card.tags);
         
         const editColorContainer = document.createElement('div');
-        editColorContainer.className = 'card-color-edit';
+        editColorContainer.className = 'card-color-edit mb-3';
         renderColorSelector(editColorContainer, card.color);
         
         back.appendChild(editSubjectContainer);
@@ -470,8 +442,8 @@ document.addEventListener('DOMContentLoaded', () => {
         back.style.display = 'block';
 
         actions.innerHTML = `
-            <button class="save-btn">Save</button>
-            <button class="cancel-btn">Cancel</button>
+            <button class="btn btn-sm btn-success save-btn">Save</button>
+            <button class="btn btn-sm btn-secondary cancel-btn">Cancel</button>
         `;
 
         actions.querySelector('.save-btn').addEventListener('click', async () => {
@@ -490,34 +462,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderTagCheckboxes(container, tagsToRender = [], checkedTags = []) {
-        container.innerHTML = '<h4>Tags:</h4>';
+        container.innerHTML = '<h6>Tags</h6>';
         if (!tagsToRender.length) return;
         
         tagsToRender.forEach(tag => {
             const isChecked = checkedTags.includes(tag._id);
-            const label = document.createElement('label');
-            label.innerHTML = `<input type="checkbox" name="tags" value="${tag._id}" ${isChecked ? 'checked' : ''}>${tag.name}`;
-            container.appendChild(label);
+            const div = document.createElement('div');
+            div.className = 'form-check form-check-inline';
+            div.innerHTML = `<input class="form-check-input" type="checkbox" name="tags" value="${tag._id}" id="edit-tag-${tag._id}" ${isChecked ? 'checked' : ''}>
+                             <label class="form-check-label" for="edit-tag-${tag._id}">${tag.name}</label>`;
+            container.appendChild(div);
         });
     }
 
     function exitEditMode(cardElement, frontText, backText) {
         cardElement.classList.remove('editing');
         cardElement.draggable = true;
-        cardElement.querySelector('.front').innerHTML = frontText;
-        cardElement.querySelector('.back').innerHTML = backText;
-        cardElement.querySelector('.back').style.display = '';
-        cardElement.querySelector('.card-actions').innerHTML = `
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
+        const cardBody = cardElement.querySelector('.card-body');
+        cardBody.querySelector('.front').innerHTML = frontText;
+        cardBody.querySelector('.back').innerHTML = backText;
+        cardBody.querySelector('.back').style.display = '';
+        cardBody.querySelector('.card-actions').innerHTML = `
+            <button class="btn btn-sm btn-outline-secondary edit-btn">Edit</button>
+            <button class="btn btn-sm btn-outline-danger delete-btn">Delete</button>
         `;
         // Re-attach listeners since we overwrote the HTML
-        cardElement.querySelector('.edit-btn').addEventListener('click', (e) => {
+        cardBody.querySelector('.edit-btn').addEventListener('click', (e) => {
             e.stopPropagation();
             const cardData = cards.find(c => c._id === cardElement.id);
             toggleEditMode(cardElement, cardData);
         });
-        cardElement.querySelector('.delete-btn').addEventListener('click', async (e) => {
+        cardBody.querySelector('.delete-btn').addEventListener('click', async (e) => {
             e.stopPropagation();
             if (confirm('Are you sure you want to delete this card?')) {
                 await deleteCard(cardElement.id);
@@ -561,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nextCard = reviewableCards[0];
             displayCardForReview(nextCard);
         } else {
-            cardStagingArea.innerHTML = '<p>No cards to review!</p>';
+            cardStagingArea.innerHTML = '<p class="text-center text-muted">No cards to review!</p>';
             correctBtn.style.display = 'none';
             incorrectBtn.style.display = 'none';
             currentReviewCard = null;
@@ -591,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await createCard({ front, back, subjectId, tags: selectedTags, color: selectedColor });
         
         createCardForm.reset();
-        closeModal(createCardModal);
+        createCardModal.hide();
         await refreshUI();
     }
     
