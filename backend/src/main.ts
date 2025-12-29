@@ -6,7 +6,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Enable CORS for frontend interaction
-  app.enableCors();
+  app.enableCors({
+    origin: 'https://sparkling-brioche-18b52b.netlify.app/', // Adjust this in production to restrict allowed origins
+  });
 
   // Use a global pipe to enforce validation rules on all incoming client payloads
   app.useGlobalPipes(
