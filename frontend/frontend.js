@@ -1,3 +1,5 @@
+import { COLORS } from './constants.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     // UI Elements
     const leitnerContainer = document.getElementById('leitner-container');
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjectFilter = document.getElementById('subject-filter');
 
     // State
-    const API_BASE_URL = 'https://leitner-system-2hz1.onrender.com';
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     let cards = [];
     let boxes = [];
     let tags = [];

@@ -99,6 +99,66 @@ let CardsService = class CardsService {
         }
         return { deleted: true, _id: cardId };
     }
+    async getDueCardsGroupedBySubject(userId) {
+        const now = new Date();
+        const dayNames = [
+            'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+        ];
+        const todayName = dayNames[now.getDay()];
+        const todayDate = now.getDate();
+        const cards = await this.cardModel
+            .find({ userId })
+            .populate('currentBoxId')
+            .populate('subjectId')
+            .exec();
+        const dueCards = cards.filter((card) => {
+            const box = card.currentBoxId;
+            const schedule = box?.schedule ?? [];
+            if (card.lastReviewed) {
+                const last = new Date(card.lastReviewed);
+                const reviewedToday = last.getFullYear() === now.getFullYear() &&
+                    last.getMonth() === now.getMonth() &&
+                    last.getDate() === now.getDate();
+                if (reviewedToday)
+                    return false;
+            }
+            for (const entry of schedule) {
+                if (entry === 'Everyday')
+                    return true;
+                if (entry === todayName)
+                    return true;
+                if (entry === 'Every other Saturday' && todayName === 'Saturday') {
+                    if (!card.lastReviewed)
+                        return true;
+                    const daysSince = (now.getTime() - new Date(card.lastReviewed).getTime()) / 86400000;
+                    if (daysSince >= 7)
+                        return true;
+                }
+                if (entry === 'First Sunday of the month' &&
+                    todayName === 'Sunday' &&
+                    todayDate <= 7) {
+                    return true;
+                }
+            }
+            return false;
+        });
+        const grouped = new Map();
+        for (const card of dueCards) {
+            const subject = card.subjectId;
+            const name = subject?.name ?? 'Unknown';
+            grouped.set(name, (grouped.get(name) ?? 0) + 1);
+        }
+        return Array.from(grouped.entries()).map(([subjectName, count]) => ({
+            subjectName,
+            count,
+        }));
+    }
 };
 exports.CardsService = CardsService;
 exports.CardsService = CardsService = __decorate([

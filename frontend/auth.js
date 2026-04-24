@@ -1,9 +1,8 @@
-const API_URL = 'https://leitner-system-2hz1.onrender.com';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 const TOKEN_KEY = 'leitner_access_token';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initAuth() {
   const path = window.location.pathname;
-  console.log('Page loaded:', path);
 
   if (path.includes('login.html')) {
     const loginForm = document.getElementById('login-form');
@@ -15,16 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) {
       registerForm.addEventListener('submit', handleRegister);
     }
-  } else if (!path.includes('login.html') && !path.includes('register.html')) {
-    // Protect all other pages
+  } else {
     const token = getToken();
-    console.log('Token on page load:', token);
     if (!token) {
-      console.log('No token found, redirecting to login.');
       window.location.href = '/login.html';
     }
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAuth);
+} else {
+  initAuth();
+}
 
 async function handleLogin(event) {
   event.preventDefault();

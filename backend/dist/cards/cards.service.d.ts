@@ -16,4 +16,8 @@ export declare class CardsService {
         deleted: boolean;
         _id: string;
     }>;
+    getDueCardsGroupedBySubject(userId: string): Promise<{
+        subjectName: string;
+        count: number;
+    }[]>;
 }

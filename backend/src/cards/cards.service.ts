@@ -65,7 +65,9 @@ export class CardsService {
       .exec();
 
     if (!card) {
-      throw new ForbiddenException('Card not found or you do not have permission.');
+      throw new ForbiddenException(
+        'Card not found or you do not have permission.',
+      );
     }
 
     const currentBox = card.currentBoxId as any;
@@ -97,7 +99,9 @@ export class CardsService {
   ): Promise<Card> {
     const card = await this.cardModel.findOne({ _id: cardId, userId }).exec();
     if (!card) {
-      throw new ForbiddenException('Card not found or you do not have permission.');
+      throw new ForbiddenException(
+        'Card not found or you do not have permission.',
+      );
     }
 
     const updatedCard = await this.cardModel
@@ -117,7 +121,9 @@ export class CardsService {
   ): Promise<{ deleted: boolean; _id: string }> {
     const card = await this.cardModel.findOne({ _id: cardId, userId }).exec();
     if (!card) {
-      throw new ForbiddenException('Card not found or you do not have permission.');
+      throw new ForbiddenException(
+        'Card not found or you do not have permission.',
+      );
     }
 
     const result = await this.cardModel.deleteOne({ _id: cardId }).exec();
@@ -125,5 +131,75 @@ export class CardsService {
       throw new NotFoundException(`Card with ID "${cardId}" not found`);
     }
     return { deleted: true, _id: cardId };
+  }
+
+  async getDueCardsGroupedBySubject(
+    userId: string,
+  ): Promise<{ subjectName: string; count: number }[]> {
+    const now = new Date();
+    const dayNames = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+    const todayName = dayNames[now.getDay()];
+    const todayDate = now.getDate();
+
+    const cards = await this.cardModel
+      .find({ userId })
+      .populate('currentBoxId')
+      .populate('subjectId')
+      .exec();
+
+    const dueCards = cards.filter((card) => {
+      const box = card.currentBoxId as any;
+      const schedule: string[] = box?.schedule ?? [];
+
+      // Skip if already reviewed today
+      if (card.lastReviewed) {
+        const last = new Date(card.lastReviewed);
+        const reviewedToday =
+          last.getFullYear() === now.getFullYear() &&
+          last.getMonth() === now.getMonth() &&
+          last.getDate() === now.getDate();
+        if (reviewedToday) return false;
+      }
+
+      for (const entry of schedule) {
+        if (entry === 'Everyday') return true;
+        if (entry === todayName) return true;
+        if (entry === 'Every other Saturday' && todayName === 'Saturday') {
+          if (!card.lastReviewed) return true;
+          const daysSince =
+            (now.getTime() - new Date(card.lastReviewed).getTime()) / 86400000;
+          if (daysSince >= 7) return true;
+        }
+        if (
+          entry === 'First Sunday of the month' &&
+          todayName === 'Sunday' &&
+          todayDate <= 7
+        ) {
+          return true;
+        }
+      }
+      return false;
+    });
+
+    // Group by subject name
+    const grouped = new Map<string, number>();
+    for (const card of dueCards) {
+      const subject = card.subjectId as any;
+      const name: string = subject?.name ?? 'Unknown';
+      grouped.set(name, (grouped.get(name) ?? 0) + 1);
+    }
+
+    return Array.from(grouped.entries()).map(([subjectName, count]) => ({
+      subjectName,
+      count,
+    }));
   }
 }

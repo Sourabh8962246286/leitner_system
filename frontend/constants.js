@@ -1,4 +1,4 @@
-const COLORS = [
+export const COLORS = [
     { name: 'No Color', value: '' },
     { name: 'Red', value: '#FFCDD2' },
     { name: 'Purple', value: '#E1BEE7' },

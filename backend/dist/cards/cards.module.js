@@ -24,7 +24,7 @@ exports.CardsModule = CardsModule = __decorate([
         ],
         controllers: [cards_controller_1.CardsController],
         providers: [cards_service_1.CardsService],
-        exports: [mongoose_1.MongooseModule],
+        exports: [cards_service_1.CardsService, mongoose_1.MongooseModule],
     })
 ], CardsModule);
 //# sourceMappingURL=cards.module.js.map
