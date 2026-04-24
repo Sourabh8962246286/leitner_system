@@ -2,6 +2,101 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background-color: #f8f9fa; /* Lighter gray for background */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Dark Mode --- */
+body.dark-mode {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #16213e !important;
+}
+
+body.dark-mode #sidebar {
+    background-color: #16213e !important;
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .sidebar-heading,
+body.dark-mode .form-check-label,
+body.dark-mode .text-muted {
+    color: #a0a0a0 !important;
+}
+
+body.dark-mode .form-select,
+body.dark-mode .form-control,
+body.dark-mode .modal-content,
+body.dark-mode .card-staging-area,
+body.dark-mode .box {
+    background-color: #2a2a4a;
+    border-color: #3a3a5a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .box {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .box h3,
+body.dark-mode .info-icon {
+    color: #4da6ff;
+    border-color: #4da6ff;
+}
+
+body.dark-mode .box.drag-over {
+    border-color: #4da6ff;
+    box-shadow: 0 4px 10px rgba(77, 166, 255, 0.2);
+}
+
+body.dark-mode .card .back {
+    border-top-color: #3a3a5a;
+}
+
+body.dark-mode .color-selector-tray {
+    border-color: #3a3a5a;
+}
+
+body.dark-mode .info-icon .tooltip {
+    background-color: #3a3a5a;
+}
+
+body.dark-mode .info-icon .tooltip::after {
+    border-color: #3a3a5a transparent transparent transparent;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #4da6ff;
+    border-color: #4da6ff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #3a8ae6;
+    border-color: #3a8ae6;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #5a5a7a;
+    border-color: #5a5a7a;
+}
+
+body.dark-mode .list-group-item {
+    background-color: #2a2a4a;
+    border-color: #3a3a5a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-check-input {
+    background-color: #3a3a5a;
+    border-color: #4a4a6a;
+}
+
+body.dark-mode .form-control::placeholder,
+body.dark-mode .form-select::placeholder {
+    color: #a0a0a0;
+    opacity: 1;
 }
 
 /* --- Auth Pages --- */
@@ -256,4 +351,42 @@ main {
 .info-icon:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+/* --- Timer --- */
+.review-timer {
+    padding: 15px;
+    background-color: #f0f0f5;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timer-display {
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #0d6efd;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.timer-display.expired {
+    color: #dc3545;
+}
+
+body.dark-mode .review-timer {
+    background-color: #2a2a4a;
+    border-color: #3a3a5a;
+}
+
+body.dark-mode .timer-display {
+    color: #4da6ff;
+}
+
+body.dark-mode .timer-display.expired {
+    color: #ff6b6b;
 }

@@ -22,6 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const createSubjectForm = document.getElementById('create-subject-form');
     const subjectsList = document.getElementById('subjects-list');
     const subjectFilter = document.getElementById('subject-filter');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const reviewTimer = document.getElementById('review-timer');
+    const timerMinutesInput = document.getElementById('timer-minutes');
+    const timerSecondsInput = document.getElementById('timer-seconds');
+    const timerStartBtn = document.getElementById('timer-start-btn');
+    const timerPauseBtn = document.getElementById('timer-pause-btn');
+    const timerResetBtn = document.getElementById('timer-reset-btn');
+    const timerDisplay = document.getElementById('timer-display');
+
+    // Dark Mode Initialization
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.textContent = '☀️';
+    }
+    darkModeToggle.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', isDark);
+        darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
 
     // State
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
@@ -33,6 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeTagFilters = new Set();
     let currentReviewCard = null;
     let draggedCard = null;
+
+    // --- Timer State ---
+    let timerInterval = null;
+    let timerRemaining = 0; // in seconds
+    let timerRunning = false;
+    let timerExpired = false;
 
     // --- Auth Wrapper for fetch ---
     async function fetchWithAuth(url, options = {}) {
@@ -78,11 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function addEventListeners() {
-        correctBtn.addEventListener('click', () => reviewAction(true));
-        incorrectBtn.addEventListener('click', () => reviewAction(false));
+        correctBtn.addEventListener('click', () => { resetTimer(); reviewAction(true); });
+        incorrectBtn.addEventListener('click', () => { resetTimer(); reviewAction(false); });
         createCardForm.addEventListener('submit', handleCreateCard);
         createTagForm.addEventListener('submit', handleCreateTag);
         
+        // Timer button listeners
+        timerStartBtn.addEventListener('click', startTimer);
+        timerPauseBtn.addEventListener('click', pauseTimer);
+        timerResetBtn.addEventListener('click', resetTimer);
+
         createCardModalEl.addEventListener('show.bs.modal', () => {
             renderCardSubjectSelector(cardSubjectSelector);
             renderColorSelector(createCardColorSelector);
@@ -524,6 +554,8 @@ document.addEventListener('DOMContentLoaded', () => {
         cardStagingArea.appendChild(cardElement);
         correctBtn.style.display = 'inline-block';
         incorrectBtn.style.display = 'inline-block';
+        showTimerUI();
+        resetTimer();
     }
 
     function displayNextCardInQueue() {
@@ -540,6 +572,8 @@ document.addEventListener('DOMContentLoaded', () => {
             cardStagingArea.innerHTML = '<p class="text-center text-muted">No cards to review!</p>';
             correctBtn.style.display = 'none';
             incorrectBtn.style.display = 'none';
+            hideTimerUI();
+            resetTimer();
             currentReviewCard = null;
         }
     }
@@ -775,6 +809,113 @@ document.addEventListener('DOMContentLoaded', () => {
         
         await handleCardReview(draggedCard.id, isCorrect);
         await refreshUI();
+    }
+
+    // --- Timer Functions ---
+    function showTimerUI() {
+        reviewTimer.style.display = 'block';
+    }
+
+    function hideTimerUI() {
+        reviewTimer.style.display = 'none';
+    }
+
+    function startTimer() {
+        if (timerRunning) return;
+
+        const mins = parseInt(timerMinutesInput.value) || 0;
+        const secs = parseInt(timerSecondsInput.value) || 0;
+
+        if (!timerExpired && timerRemaining > 0) {
+            // Resume existing paused timer
+            startInterval();
+            return;
+        }
+
+        if (mins === 0 && secs === 0) {
+            alert('Please set a time first.');
+            return;
+        }
+
+        timerRemaining = mins * 60 + secs;
+        timerExpired = false;
+        timerDisplay.classList.remove('expired');
+        startInterval();
+    }
+
+    function startInterval() {
+        timerRunning = true;
+        timerStartBtn.disabled = true;
+        timerPauseBtn.disabled = false;
+        timerMinutesInput.disabled = true;
+        timerSecondsInput.disabled = true;
+
+        timerInterval = setInterval(() => {
+            timerRemaining--;
+            if (timerRemaining <= 0) {
+                timerRemaining = 0;
+                clearInterval(timerInterval);
+                timerRunning = false;
+                timerExpired = true;
+                timerDisplay.classList.add('expired');
+                timerStartBtn.disabled = false;
+                timerPauseBtn.disabled = true;
+                timerMinutesInput.disabled = false;
+                timerSecondsInput.disabled = false;
+                timerFlash();
+            }
+            updateTimerDisplay();
+        }, 1000);
+        updateTimerDisplay();
+    }
+
+    function pauseTimer() {
+        if (!timerRunning) return;
+        clearInterval(timerInterval);
+        timerRunning = false;
+        timerStartBtn.disabled = false;
+        timerPauseBtn.disabled = true;
+    }
+
+    function resetTimer() {
+        clearInterval(timerInterval);
+        timerRunning = false;
+        timerRemaining = 0;
+        timerExpired = false;
+        timerMinutesInput.disabled = false;
+        timerSecondsInput.disabled = false;
+        timerStartBtn.disabled = false;
+        timerPauseBtn.disabled = true;
+        timerDisplay.classList.remove('expired');
+        timerMinutesInput.value = '';
+        timerSecondsInput.value = '';
+        updateTimerDisplay();
+    }
+
+    function updateTimerDisplay() {
+        const mins = Math.floor(timerRemaining / 60);
+        const secs = timerRemaining % 60;
+        timerDisplay.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function timerFlash() {
+        let flashCount = 0;
+        const flashInterval = setInterval(() => {
+            timerDisplay.style.visibility = timerDisplay.style.visibility === 'hidden' ? 'visible' : 'hidden';
+            flashCount++;
+            if (flashCount >= 6) {
+                clearInterval(flashInterval);
+                timerDisplay.style.visibility = 'visible';
+                // Optional: try to play a beep sound
+                try {
+                    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    const osc = ctx.createOscillator();
+                    osc.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.3);
+                } catch (e) { /* ignore */ }
+            }
+        }, 300);
     }
 
     // Initial Load
