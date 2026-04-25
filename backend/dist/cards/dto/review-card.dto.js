@@ -14,6 +14,7 @@ const class_validator_1 = require("class-validator");
 class ReviewCardDto {
     cardId;
     isCorrect;
+    timeSpent;
 }
 exports.ReviewCardDto = ReviewCardDto;
 __decorate([
@@ -26,4 +27,9 @@ __decorate([
     (0, class_validator_1.IsBoolean)(),
     __metadata("design:type", Boolean)
 ], ReviewCardDto.prototype, "isCorrect", void 0);
+__decorate([
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], ReviewCardDto.prototype, "timeSpent", void 0);
 //# sourceMappingURL=review-card.dto.js.map

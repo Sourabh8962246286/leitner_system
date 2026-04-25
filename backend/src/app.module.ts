@@ -12,6 +12,7 @@ import { UsersModule } from './users/users.module';
 import { DatabaseModule } from './database/database.module';
 import { NotificationsModule } from './notifications/notifications.module';
 import { SchedulerModule } from './scheduler/scheduler.module';
+import { CardLogsModule } from './card-logs/card-logs.module';
 
 @Module({
   imports: [
@@ -20,13 +21,7 @@ import { SchedulerModule } from './scheduler/scheduler.module';
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', '..', 'frontend', 'dist'),
-      exclude: [
-        '/auth/{*path}',
-        '/boxes/{*path}',
-        '/cards/{*path}',
-        '/subjects/{*path}',
-        '/tags/{*path}',
-      ],
+      exclude: ['/api/{*path}'],
     }),
     ScheduleModule.forRoot(),
     DatabaseModule,
@@ -38,6 +33,7 @@ import { SchedulerModule } from './scheduler/scheduler.module';
     SubjectsModule,
     NotificationsModule,
     SchedulerModule,
+    CardLogsModule,
   ],
   controllers: [],
   providers: [],

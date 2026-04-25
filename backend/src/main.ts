@@ -11,6 +11,9 @@ async function bootstrap() {
       : ['http://localhost:5173'],    // Vite dev server
   });
 
+  // All API routes will be prefixed with /api (e.g., /api/cards, /api/auth)
+  app.setGlobalPrefix('api');
+
   // Use a global pipe to enforce validation rules on all incoming client payloads
   app.useGlobalPipes(
     new ValidationPipe({

@@ -10,6 +10,7 @@ async function bootstrap() {
             ? false
             : ['http://localhost:5173'],
     });
+    app.setGlobalPrefix('api');
     app.useGlobalPipes(new common_1.ValidationPipe({
         whitelist: true,
         forbidNonWhitelisted: true,

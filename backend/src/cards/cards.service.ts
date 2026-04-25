@@ -6,6 +6,7 @@ import {
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { BoxesService } from '../boxes/boxes.service';
+import { CardLogsService } from '../card-logs/card-logs.service';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
 import { ReviewCardDto } from './dto/review-card.dto';
@@ -19,6 +20,7 @@ export class CardsService {
   constructor(
     @InjectModel(Card.name) private cardModel: Model<CardDocument>,
     private readonly boxesService: BoxesService,
+    private readonly cardLogsService: CardLogsService,
   ) {}
 
   async create(createCardDto: CreateCardDto, userId: string): Promise<Card> {
@@ -57,7 +59,7 @@ export class CardsService {
     reviewCardDto: ReviewCardDto,
     userId: string,
   ): Promise<Card> {
-    const { cardId, isCorrect } = reviewCardDto;
+    const { cardId, isCorrect, timeSpent = 0 } = reviewCardDto;
 
     const card = await this.cardModel
       .findOne({ _id: cardId, userId })
@@ -85,6 +87,17 @@ export class CardsService {
         throw new NotFoundException('Box with level 1 not found.');
       }
     }
+
+    // Create log entry before updating the card
+    await this.cardLogsService.createLog({
+      cardId: card._id.toString(),
+      userId,
+      subjectId: card.subjectId.toString(),
+      isCorrect,
+      timeSpent,
+      previousBoxLevel: currentLevel,
+      newBoxLevel: (nextBox as any).level,
+    });
 
     card.currentBoxId = nextBox._id;
     card.lastReviewed = new Date();
@@ -130,6 +143,10 @@ export class CardsService {
     if (result.deletedCount === 0) {
       throw new NotFoundException(`Card with ID "${cardId}" not found`);
     }
+
+    // Delete all associated logs
+    await this.cardLogsService.deleteLogsForCard(cardId);
+
     return { deleted: true, _id: cardId };
   }
 

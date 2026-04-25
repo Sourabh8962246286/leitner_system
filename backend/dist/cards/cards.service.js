@@ -17,13 +17,16 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const boxes_service_1 = require("../boxes/boxes.service");
+const card_logs_service_1 = require("../card-logs/card-logs.service");
 const card_schema_1 = require("./schemas/card.schema");
 let CardsService = class CardsService {
     cardModel;
     boxesService;
-    constructor(cardModel, boxesService) {
+    cardLogsService;
+    constructor(cardModel, boxesService, cardLogsService) {
         this.cardModel = cardModel;
         this.boxesService = boxesService;
+        this.cardLogsService = cardLogsService;
     }
     async create(createCardDto, userId) {
         const firstBox = await this.boxesService.findByLevel(1);
@@ -48,7 +51,7 @@ let CardsService = class CardsService {
         return this.cardModel.find(filter).exec();
     }
     async handleReview(reviewCardDto, userId) {
-        const { cardId, isCorrect } = reviewCardDto;
+        const { cardId, isCorrect, timeSpent = 0 } = reviewCardDto;
         const card = await this.cardModel
             .findOne({ _id: cardId, userId })
             .populate('currentBoxId')
@@ -71,6 +74,15 @@ let CardsService = class CardsService {
                 throw new common_1.NotFoundException('Box with level 1 not found.');
             }
         }
+        await this.cardLogsService.createLog({
+            cardId: card._id.toString(),
+            userId,
+            subjectId: card.subjectId.toString(),
+            isCorrect,
+            timeSpent,
+            previousBoxLevel: currentLevel,
+            newBoxLevel: nextBox.level,
+        });
         card.currentBoxId = nextBox._id;
         card.lastReviewed = new Date();
         return card.save();
@@ -97,6 +109,7 @@ let CardsService = class CardsService {
         if (result.deletedCount === 0) {
             throw new common_1.NotFoundException(`Card with ID "${cardId}" not found`);
         }
+        await this.cardLogsService.deleteLogsForCard(cardId);
         return { deleted: true, _id: cardId };
     }
     async getDueCardsGroupedBySubject(userId) {
@@ -165,6 +178,7 @@ exports.CardsService = CardsService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(card_schema_1.Card.name)),
     __metadata("design:paramtypes", [mongoose_2.Model,
-        boxes_service_1.BoxesService])
+        boxes_service_1.BoxesService,
+        card_logs_service_1.CardLogsService])
 ], CardsService);
 //# sourceMappingURL=cards.service.js.map

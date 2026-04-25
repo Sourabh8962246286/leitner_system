@@ -44,3 +44,9 @@ export class Card {
 }
 
 export const CardSchema = SchemaFactory.createForClass(Card);
+
+// Compound indexes for query optimization
+CardSchema.index({ userId: 1, subjectId: 1 }); // findAll with subject filter
+CardSchema.index({ userId: 1, currentBoxId: 1 }); // box-based queries
+CardSchema.index({ userId: 1, tags: 1 }); // tag filtering
+CardSchema.index({ userId: 1, lastReviewed: 1 }); // due cards queries

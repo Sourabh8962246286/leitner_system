@@ -21,6 +21,7 @@ const users_module_1 = require("./users/users.module");
 const database_module_1 = require("./database/database.module");
 const notifications_module_1 = require("./notifications/notifications.module");
 const scheduler_module_1 = require("./scheduler/scheduler.module");
+const card_logs_module_1 = require("./card-logs/card-logs.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -32,13 +33,7 @@ exports.AppModule = AppModule = __decorate([
             }),
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: (0, path_1.join)(__dirname, '..', '..', 'frontend', 'dist'),
-                exclude: [
-                    '/auth/{*path}',
-                    '/boxes/{*path}',
-                    '/cards/{*path}',
-                    '/subjects/{*path}',
-                    '/tags/{*path}',
-                ],
+                exclude: ['/api/{*path}'],
             }),
             schedule_1.ScheduleModule.forRoot(),
             database_module_1.DatabaseModule,
@@ -50,6 +45,7 @@ exports.AppModule = AppModule = __decorate([
             subjects_module_1.SubjectsModule,
             notifications_module_1.NotificationsModule,
             scheduler_module_1.SchedulerModule,
+            card_logs_module_1.CardLogsModule,
         ],
         controllers: [],
         providers: [],

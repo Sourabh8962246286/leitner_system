@@ -10,6 +10,7 @@ exports.CardsModule = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const boxes_module_1 = require("../boxes/boxes.module");
+const card_logs_module_1 = require("../card-logs/card-logs.module");
 const cards_controller_1 = require("./cards.controller");
 const cards_service_1 = require("./cards.service");
 const card_schema_1 = require("./schemas/card.schema");
@@ -21,6 +22,7 @@ exports.CardsModule = CardsModule = __decorate([
         imports: [
             mongoose_1.MongooseModule.forFeature([{ name: card_schema_1.Card.name, schema: card_schema_1.CardSchema }]),
             boxes_module_1.BoxesModule,
+            card_logs_module_1.CardLogsModule,
         ],
         controllers: [cards_controller_1.CardsController],
         providers: [cards_service_1.CardsService],

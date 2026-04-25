@@ -30,6 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerPauseBtn = document.getElementById('timer-pause-btn');
     const timerResetBtn = document.getElementById('timer-reset-btn');
     const timerDisplay = document.getElementById('timer-display');
+    const showLogsBtn = document.getElementById('show-logs-btn');
+    const cardLogsPanel = document.getElementById('card-logs-panel');
+    const cardLogsStats = document.getElementById('card-logs-stats');
+    const cardLogsList = document.getElementById('card-logs-list');
 
     // Dark Mode Initialization
     if (localStorage.getItem('darkMode') === 'true') {
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeTagFilters = new Set();
     let currentReviewCard = null;
     let draggedCard = null;
+    let logsVisible = false;
 
     // --- Timer State ---
     let timerInterval = null;
@@ -112,6 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
         timerStartBtn.addEventListener('click', startTimer);
         timerPauseBtn.addEventListener('click', pauseTimer);
         timerResetBtn.addEventListener('click', resetTimer);
+
+        // Logs toggle listener
+        showLogsBtn.addEventListener('click', toggleCardLogs);
 
         createCardModalEl.addEventListener('show.bs.modal', () => {
             renderCardSubjectSelector(cardSubjectSelector);
@@ -554,11 +562,84 @@ document.addEventListener('DOMContentLoaded', () => {
         cardStagingArea.appendChild(cardElement);
         correctBtn.style.display = 'inline-block';
         incorrectBtn.style.display = 'inline-block';
+        showLogsBtn.style.display = 'inline-block';
+        hideCardLogs();
         showTimerUI();
         resetTimer();
     }
 
+    function toggleCardLogs() {
+        logsVisible = !logsVisible;
+        if (logsVisible) {
+            loadAndRenderCardLogs();
+        }
+        cardLogsPanel.style.display = logsVisible ? 'block' : 'none';
+        showLogsBtn.textContent = logsVisible ? '📋 Hide Logs' : '📋 Logs';
+    }
+
+    function hideCardLogs() {
+        logsVisible = false;
+        cardLogsPanel.style.display = 'none';
+        showLogsBtn.textContent = '📋 Logs';
+    }
+
+    async function loadAndRenderCardLogs() {
+        if (!currentReviewCard) return;
+        
+        const logs = await fetchCardLogs(currentReviewCard._id);
+        renderCardLogs(logs);
+    }
+
+    function renderCardLogs(logs) {
+        // Calculate stats
+        const totalReviews = logs.length;
+        const correctCount = logs.filter(log => log.isCorrect).length;
+        const incorrectCount = totalReviews - correctCount;
+        const successRate = totalReviews > 0 ? Math.round((correctCount / totalReviews) * 100) : 0;
+        const totalTimeSpent = logs.reduce((sum, log) => sum + log.timeSpent, 0);
+        const totalMinutes = Math.floor(totalTimeSpent / 60);
+        const totalSeconds = totalTimeSpent % 60;
+
+        // Render stats
+        cardLogsStats.innerHTML = `
+            <div class="d-flex flex-wrap gap-2 text-center small">
+                <span><strong>${totalReviews}</strong> reviews</span> |
+                <span class="text-success"><strong>${correctCount}</strong> ✅</span> |
+                <span class="text-danger"><strong>${incorrectCount}</strong> ❌</span> |
+                <span><strong>${successRate}%</strong> success</span> |
+                <span><strong>${totalMinutes}m ${totalSeconds}s</strong> total</span>
+            </div>
+        `;
+
+        // Render log list
+        if (logs.length === 0) {
+            cardLogsList.innerHTML = '<p class="text-center text-muted small mb-0">No review history yet.</p>';
+            return;
+        }
+
+        cardLogsList.innerHTML = logs.map(log => {
+            const date = new Date(log.reviewedAt);
+            const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const timeStr = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+            const resultIcon = log.isCorrect ? '✅' : '❌';
+            const timeStr2 = log.timeSpent > 0 ? `${Math.floor(log.timeSpent / 60)}m ${log.timeSpent % 60}s` : 'No timer';
+            const boxMovement = `Box ${log.previousBoxLevel} → Box ${log.newBoxLevel}`;
+
+            return `
+                <div class="d-flex justify-content-between align-items-start py-1 border-bottom">
+                    <div class="small">
+                        <span>${resultIcon}</span>
+                        <span class="ms-2">${dateStr} ${timeStr}</span>
+                        <span class="ms-2 text-muted">${boxMovement}</span>
+                    </div>
+                    <span class="small text-muted">${timeStr2}</span>
+                </div>
+            `;
+        }).join('');
+    }
+
     function displayNextCardInQueue() {
+        hideCardLogs();
         const reviewableCards = cards.filter(card => {
             const box = boxes.find(b => b._id.toString() === card.currentBoxId.toString());
             const maxLevel = Math.max(...boxes.map(b => b.level), 0);
@@ -581,7 +662,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function reviewAction(isCorrect) {
         if (!currentReviewCard) return;
 
-        await handleCardReview(currentReviewCard._id, isCorrect);
+        const timeSpent = timerRemaining > 0 ? timerRemaining : 0;
+        await handleCardReview(currentReviewCard._id, isCorrect, timeSpent);
+        hideCardLogs();
         await refreshUI();
     }
 
@@ -744,16 +827,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    async function handleCardReview(cardId, isCorrect) {
+    async function handleCardReview(cardId, isCorrect, timeSpent = 0) {
         try {
             const response = await fetchWithAuth(`${API_BASE_URL}/cards/review`, {
                 method: 'POST',
-                body: JSON.stringify({ cardId, isCorrect }),
+                body: JSON.stringify({ cardId, isCorrect, timeSpent }),
             });
             if (!response.ok) throw new Error('Failed to review card');
             return await response.json();
         } catch (error) {
             console.error(error);
+        }
+    }
+
+    async function fetchCardLogs(cardId) {
+        try {
+            const response = await fetchWithAuth(`${API_BASE_URL}/card-logs/${cardId}`);
+            if (!response.ok) throw new Error('Failed to fetch card logs');
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+            return [];
         }
     }
 
@@ -807,7 +901,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const isCorrect = parseInt(toBox.dataset.level) > parseInt(fromBox.dataset.level);
         
-        await handleCardReview(draggedCard.id, isCorrect);
+        await handleCardReview(draggedCard.id, isCorrect, 0);
         await refreshUI();
     }
 
