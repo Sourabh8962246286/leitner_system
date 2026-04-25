@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Timer State ---
     let timerInterval = null;
     let timerRemaining = 0; // in seconds
+    let timerInitial = 0; // initial timer value in seconds
     let timerRunning = false;
     let timerExpired = false;
 
@@ -662,7 +663,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function reviewAction(isCorrect) {
         if (!currentReviewCard) return;
 
-        const timeSpent = timerRemaining > 0 ? timerRemaining : 0;
+        // Calculate actual time spent (initial - remaining)
+        const timeSpent = timerInitial > 0 ? (timerInitial - timerRemaining) : 0;
+        console.log(`Timer registered: ${Math.floor(timeSpent / 60)}m ${timeSpent % 60}s (Initial: ${timerInitial}s, Remaining: ${timerRemaining}s)`);
         await handleCardReview(currentReviewCard._id, isCorrect, timeSpent);
         hideCardLogs();
         await refreshUI();
@@ -932,6 +935,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         timerRemaining = mins * 60 + secs;
+        timerInitial = timerRemaining; // Store initial value
         timerExpired = false;
         timerDisplay.classList.remove('expired');
         startInterval();
@@ -975,6 +979,7 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(timerInterval);
         timerRunning = false;
         timerRemaining = 0;
+        timerInitial = 0; // Reset initial value
         timerExpired = false;
         timerMinutesInput.disabled = false;
         timerSecondsInput.disabled = false;

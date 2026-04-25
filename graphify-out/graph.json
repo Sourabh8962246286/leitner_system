@@ -57,23 +57,23 @@
       "source_file": "frontend/constants.js",
       "source_location": "L1",
       "id": "frontend_constants_js",
-      "community": 44,
+      "community": 45,
       "norm_label": "constants.js"
     },
     {
       "label": "frontend.js",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
       "source_location": "L1",
-      "id": "frontend_frontend_js",
+      "id": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "community": 0,
       "norm_label": "frontend.js"
     },
     {
       "label": "fetchWithAuth()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L68",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L69",
       "id": "frontend_fetchwithauth",
       "community": 0,
       "norm_label": "fetchwithauth()"
@@ -81,8 +81,8 @@
     {
       "label": "initializeApp()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L94",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L95",
       "id": "frontend_initializeapp",
       "community": 0,
       "norm_label": "initializeapp()"
@@ -90,8 +90,8 @@
     {
       "label": "refreshUI()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L99",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L100",
       "id": "frontend_refreshui",
       "community": 0,
       "norm_label": "refreshui()"
@@ -99,8 +99,8 @@
     {
       "label": "addEventListeners()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L110",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L111",
       "id": "frontend_addeventlisteners",
       "community": 0,
       "norm_label": "addeventlisteners()"
@@ -108,8 +108,8 @@
     {
       "label": "fetchBoxes()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L135",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L136",
       "id": "frontend_fetchboxes",
       "community": 0,
       "norm_label": "fetchboxes()"
@@ -117,8 +117,8 @@
     {
       "label": "fetchTags()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L146",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L147",
       "id": "frontend_fetchtags",
       "community": 0,
       "norm_label": "fetchtags()"
@@ -126,8 +126,8 @@
     {
       "label": "fetchCards()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L160",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L161",
       "id": "frontend_fetchcards",
       "community": 0,
       "norm_label": "fetchcards()"
@@ -135,8 +135,8 @@
     {
       "label": "renderBoxes()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L182",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L183",
       "id": "frontend_renderboxes",
       "community": 0,
       "norm_label": "renderboxes()"
@@ -144,8 +144,8 @@
     {
       "label": "renderCards()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L215",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L216",
       "id": "frontend_rendercards",
       "community": 0,
       "norm_label": "rendercards()"
@@ -153,8 +153,8 @@
     {
       "label": "renderSubjects()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L230",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L231",
       "id": "frontend_rendersubjects",
       "community": 0,
       "norm_label": "rendersubjects()"
@@ -162,8 +162,8 @@
     {
       "label": "renderSubjectFilter()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L244",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L245",
       "id": "frontend_rendersubjectfilter",
       "community": 0,
       "norm_label": "rendersubjectfilter()"
@@ -171,8 +171,8 @@
     {
       "label": "handleSubjectFilterChange()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L256",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L257",
       "id": "frontend_handlesubjectfilterchange",
       "community": 0,
       "norm_label": "handlesubjectfilterchange()"
@@ -180,8 +180,8 @@
     {
       "label": "handleCreateSubject()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L263",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L264",
       "id": "frontend_handlecreatesubject",
       "community": 0,
       "norm_label": "handlecreatesubject()"
@@ -189,8 +189,8 @@
     {
       "label": "handleDeleteSubject()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L274",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L275",
       "id": "frontend_handledeletesubject",
       "community": 0,
       "norm_label": "handledeletesubject()"
@@ -198,8 +198,8 @@
     {
       "label": "renderAllTagElements()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L282",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L283",
       "id": "frontend_renderalltagelements",
       "community": 0,
       "norm_label": "renderalltagelements()"
@@ -207,8 +207,8 @@
     {
       "label": "renderCardSubjectSelector()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L288",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L289",
       "id": "frontend_rendercardsubjectselector",
       "community": 0,
       "norm_label": "rendercardsubjectselector()"
@@ -216,8 +216,8 @@
     {
       "label": "renderColorSelector()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L326",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L327",
       "id": "frontend_rendercolorselector",
       "community": 0,
       "norm_label": "rendercolorselector()"
@@ -225,8 +225,8 @@
     {
       "label": "renderTagList()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L358",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L359",
       "id": "frontend_rendertaglist",
       "community": 0,
       "norm_label": "rendertaglist()"
@@ -234,8 +234,8 @@
     {
       "label": "renderTagFilters()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L371",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L372",
       "id": "frontend_rendertagfilters",
       "community": 0,
       "norm_label": "rendertagfilters()"
@@ -243,8 +243,8 @@
     {
       "label": "renderCardTagCheckboxes()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L385",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L386",
       "id": "frontend_rendercardtagcheckboxes",
       "community": 0,
       "norm_label": "rendercardtagcheckboxes()"
@@ -252,8 +252,8 @@
     {
       "label": "createCardElement()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L399",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L400",
       "id": "frontend_createcardelement",
       "community": 0,
       "norm_label": "createcardelement()"
@@ -261,8 +261,8 @@
     {
       "label": "toggleEditMode()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L447",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L448",
       "id": "frontend_toggleeditmode",
       "community": 0,
       "norm_label": "toggleeditmode()"
@@ -270,8 +270,8 @@
     {
       "label": "renderTagCheckboxes()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L503",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L504",
       "id": "frontend_rendertagcheckboxes",
       "community": 0,
       "norm_label": "rendertagcheckboxes()"
@@ -279,8 +279,8 @@
     {
       "label": "exitEditMode()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L517",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L518",
       "id": "frontend_exiteditmode",
       "community": 0,
       "norm_label": "exiteditmode()"
@@ -288,8 +288,8 @@
     {
       "label": "displayCardForReview()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L543",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L544",
       "id": "frontend_displaycardforreview",
       "community": 0,
       "norm_label": "displaycardforreview()"
@@ -297,8 +297,8 @@
     {
       "label": "toggleCardLogs()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L571",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L572",
       "id": "frontend_togglecardlogs",
       "community": 0,
       "norm_label": "togglecardlogs()"
@@ -306,8 +306,8 @@
     {
       "label": "hideCardLogs()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L580",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L581",
       "id": "frontend_hidecardlogs",
       "community": 0,
       "norm_label": "hidecardlogs()"
@@ -315,8 +315,8 @@
     {
       "label": "loadAndRenderCardLogs()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L586",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L587",
       "id": "frontend_loadandrendercardlogs",
       "community": 0,
       "norm_label": "loadandrendercardlogs()"
@@ -324,8 +324,8 @@
     {
       "label": "renderCardLogs()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L593",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L594",
       "id": "frontend_rendercardlogs",
       "community": 0,
       "norm_label": "rendercardlogs()"
@@ -333,8 +333,8 @@
     {
       "label": "displayNextCardInQueue()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L641",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L642",
       "id": "frontend_displaynextcardinqueue",
       "community": 0,
       "norm_label": "displaynextcardinqueue()"
@@ -342,8 +342,8 @@
     {
       "label": "reviewAction()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L662",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L663",
       "id": "frontend_reviewaction",
       "community": 0,
       "norm_label": "reviewaction()"
@@ -351,8 +351,8 @@
     {
       "label": "handleCreateCard()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L671",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L674",
       "id": "frontend_handlecreatecard",
       "community": 0,
       "norm_label": "handlecreatecard()"
@@ -360,8 +360,8 @@
     {
       "label": "handleCreateTag()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L691",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L694",
       "id": "frontend_handlecreatetag",
       "community": 0,
       "norm_label": "handlecreatetag()"
@@ -369,8 +369,8 @@
     {
       "label": "handleDeleteTag()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L706",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L709",
       "id": "frontend_handledeletetag",
       "community": 0,
       "norm_label": "handledeletetag()"
@@ -378,8 +378,8 @@
     {
       "label": "handleFilterChange()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L714",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L717",
       "id": "frontend_handlefilterchange",
       "community": 0,
       "norm_label": "handlefilterchange()"
@@ -387,8 +387,8 @@
     {
       "label": "createCard()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L726",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L729",
       "id": "frontend_createcard",
       "community": 0,
       "norm_label": "createcard()"
@@ -396,8 +396,8 @@
     {
       "label": "updateCard()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L739",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L742",
       "id": "frontend_updatecard",
       "community": 0,
       "norm_label": "updatecard()"
@@ -405,8 +405,8 @@
     {
       "label": "deleteCard()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L752",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L755",
       "id": "frontend_deletecard",
       "community": 0,
       "norm_label": "deletecard()"
@@ -414,8 +414,8 @@
     {
       "label": "createTag()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L764",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L767",
       "id": "frontend_createtag",
       "community": 0,
       "norm_label": "createtag()"
@@ -423,8 +423,8 @@
     {
       "label": "deleteTag()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L777",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L780",
       "id": "frontend_deletetag",
       "community": 0,
       "norm_label": "deletetag()"
@@ -432,8 +432,8 @@
     {
       "label": "fetchSubjects()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L789",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L792",
       "id": "frontend_fetchsubjects",
       "community": 0,
       "norm_label": "fetchsubjects()"
@@ -441,8 +441,8 @@
     {
       "label": "createSubject()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L800",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L803",
       "id": "frontend_createsubject",
       "community": 0,
       "norm_label": "createsubject()"
@@ -450,8 +450,8 @@
     {
       "label": "deleteSubject()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L813",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L816",
       "id": "frontend_deletesubject",
       "community": 0,
       "norm_label": "deletesubject()"
@@ -459,8 +459,8 @@
     {
       "label": "handleCardReview()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L830",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L833",
       "id": "frontend_handlecardreview",
       "community": 0,
       "norm_label": "handlecardreview()"
@@ -468,8 +468,8 @@
     {
       "label": "fetchCardLogs()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L843",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L846",
       "id": "frontend_fetchcardlogs",
       "community": 0,
       "norm_label": "fetchcardlogs()"
@@ -477,8 +477,8 @@
     {
       "label": "addDragAndDropListeners()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L855",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L858",
       "id": "frontend_adddraganddroplisteners",
       "community": 0,
       "norm_label": "adddraganddroplisteners()"
@@ -486,8 +486,8 @@
     {
       "label": "onDragStart()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L868",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L871",
       "id": "frontend_ondragstart",
       "community": 0,
       "norm_label": "ondragstart()"
@@ -495,8 +495,8 @@
     {
       "label": "onDragEnd()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L877",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L880",
       "id": "frontend_ondragend",
       "community": 0,
       "norm_label": "ondragend()"
@@ -504,8 +504,8 @@
     {
       "label": "onDragOver()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L882",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L885",
       "id": "frontend_ondragover",
       "community": 0,
       "norm_label": "ondragover()"
@@ -513,8 +513,8 @@
     {
       "label": "onDragLeave()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L888",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L891",
       "id": "frontend_ondragleave",
       "community": 0,
       "norm_label": "ondragleave()"
@@ -522,8 +522,8 @@
     {
       "label": "onDrop()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L892",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L895",
       "id": "frontend_ondrop",
       "community": 0,
       "norm_label": "ondrop()"
@@ -531,8 +531,8 @@
     {
       "label": "showTimerUI()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L909",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L912",
       "id": "frontend_showtimerui",
       "community": 0,
       "norm_label": "showtimerui()"
@@ -540,8 +540,8 @@
     {
       "label": "hideTimerUI()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L913",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L916",
       "id": "frontend_hidetimerui",
       "community": 0,
       "norm_label": "hidetimerui()"
@@ -549,8 +549,8 @@
     {
       "label": "startTimer()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L917",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L920",
       "id": "frontend_starttimer",
       "community": 0,
       "norm_label": "starttimer()"
@@ -558,8 +558,8 @@
     {
       "label": "startInterval()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L940",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L944",
       "id": "frontend_startinterval",
       "community": 0,
       "norm_label": "startinterval()"
@@ -567,8 +567,8 @@
     {
       "label": "pauseTimer()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L966",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L970",
       "id": "frontend_pausetimer",
       "community": 0,
       "norm_label": "pausetimer()"
@@ -576,8 +576,8 @@
     {
       "label": "resetTimer()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L974",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L978",
       "id": "frontend_resettimer",
       "community": 0,
       "norm_label": "resettimer()"
@@ -585,8 +585,8 @@
     {
       "label": "updateTimerDisplay()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L989",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L994",
       "id": "frontend_updatetimerdisplay",
       "community": 0,
       "norm_label": "updatetimerdisplay()"
@@ -594,8 +594,8 @@
     {
       "label": "timerFlash()",
       "file_type": "code",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L995",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L1000",
       "id": "frontend_timerflash",
       "community": 0,
       "norm_label": "timerflash()"
@@ -603,64 +603,73 @@
     {
       "label": "auth.js",
       "file_type": "code",
-      "source_file": "frontend/auth.js",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
       "source_location": "L1",
-      "id": "frontend_auth_js",
-      "community": 6,
+      "id": "users_sourabhnigam_leitnerapp_frontend_auth_js",
+      "community": 5,
       "norm_label": "auth.js"
     },
     {
       "label": "initAuth()",
       "file_type": "code",
-      "source_file": "frontend/auth.js",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
       "source_location": "L4",
       "id": "auth_initauth",
-      "community": 6,
+      "community": 5,
       "norm_label": "initauth()"
+    },
+    {
+      "label": "initDarkMode()",
+      "file_type": "code",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L28",
+      "id": "auth_initdarkmode",
+      "community": 5,
+      "norm_label": "initdarkmode()"
     },
     {
       "label": "handleLogin()",
       "file_type": "code",
-      "source_file": "frontend/auth.js",
-      "source_location": "L31",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L52",
       "id": "auth_handlelogin",
-      "community": 6,
+      "community": 5,
       "norm_label": "handlelogin()"
     },
     {
       "label": "handleRegister()",
       "file_type": "code",
-      "source_file": "frontend/auth.js",
-      "source_location": "L63",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L84",
       "id": "auth_handleregister",
-      "community": 6,
+      "community": 5,
       "norm_label": "handleregister()"
     },
     {
       "label": "setToken()",
       "file_type": "code",
-      "source_file": "frontend/auth.js",
-      "source_location": "L98",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L119",
       "id": "auth_settoken",
-      "community": 6,
+      "community": 5,
       "norm_label": "settoken()"
     },
     {
       "label": "getToken()",
       "file_type": "code",
-      "source_file": "frontend/auth.js",
-      "source_location": "L103",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L124",
       "id": "auth_gettoken",
-      "community": 6,
+      "community": 5,
       "norm_label": "gettoken()"
     },
     {
       "label": "logout()",
       "file_type": "code",
-      "source_file": "frontend/auth.js",
-      "source_location": "L107",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L128",
       "id": "auth_logout",
-      "community": 6,
+      "community": 5,
       "norm_label": "logout()"
     },
     {
@@ -669,7 +678,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/frontend/vite.config.js",
       "source_location": "L1",
       "id": "users_sourabhnigam_leitnerapp_frontend_vite_config_js",
-      "community": 45,
+      "community": 46,
       "norm_label": "vite.config.js"
     },
     {
@@ -678,7 +687,7 @@
       "source_file": "backend/eslint.config.mjs",
       "source_location": "L1",
       "id": "backend_eslint_config_mjs",
-      "community": 46,
+      "community": 47,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -687,7 +696,7 @@
       "source_file": "backend/test/app.e2e-spec.ts",
       "source_location": "L1",
       "id": "backend_test_app_e2e_spec_ts",
-      "community": 47,
+      "community": 48,
       "norm_label": "app.e2e-spec.ts"
     },
     {
@@ -696,7 +705,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/main.ts",
       "source_location": "L1",
       "id": "users_sourabhnigam_leitnerapp_backend_src_main_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "main.ts"
     },
     {
@@ -705,7 +714,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/main.ts",
       "source_location": "L5",
       "id": "main_bootstrap",
-      "community": 2,
+      "community": 1,
       "norm_label": "bootstrap()"
     },
     {
@@ -714,7 +723,7 @@
       "source_file": "backend/src/seed.ts",
       "source_location": "L1",
       "id": "backend_src_seed_ts",
-      "community": 16,
+      "community": 17,
       "norm_label": "seed.ts"
     },
     {
@@ -723,7 +732,7 @@
       "source_file": "backend/src/seed.ts",
       "source_location": "L7",
       "id": "seed_bootstrap",
-      "community": 16,
+      "community": 17,
       "norm_label": "bootstrap()"
     },
     {
@@ -732,7 +741,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/app.module.ts",
       "source_location": "L1",
       "id": "users_sourabhnigam_leitnerapp_backend_src_app_module_ts",
-      "community": 17,
+      "community": 18,
       "norm_label": "app.module.ts"
     },
     {
@@ -741,7 +750,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/app.module.ts",
       "source_location": "L41",
       "id": "app_module_appmodule",
-      "community": 17,
+      "community": 18,
       "norm_label": "appmodule"
     },
     {
@@ -750,7 +759,7 @@
       "source_file": "backend/src/database/database.module.ts",
       "source_location": "L1",
       "id": "backend_src_database_database_module_ts",
-      "community": 18,
+      "community": 19,
       "norm_label": "database.module.ts"
     },
     {
@@ -759,7 +768,7 @@
       "source_file": "backend/src/database/database.module.ts",
       "source_location": "L18",
       "id": "database_module_databasemodule",
-      "community": 18,
+      "community": 19,
       "norm_label": "databasemodule"
     },
     {
@@ -768,7 +777,7 @@
       "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L1",
       "id": "backend_src_auth_auth_controller_ts",
-      "community": 2,
+      "community": 4,
       "norm_label": "auth.controller.ts"
     },
     {
@@ -777,7 +786,7 @@
       "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L8",
       "id": "auth_controller_authcontroller",
-      "community": 2,
+      "community": 4,
       "norm_label": "authcontroller"
     },
     {
@@ -786,7 +795,7 @@
       "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L9",
       "id": "auth_controller_authcontroller_constructor",
-      "community": 2,
+      "community": 4,
       "norm_label": ".constructor()"
     },
     {
@@ -795,7 +804,7 @@
       "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L12",
       "id": "auth_controller_authcontroller_register",
-      "community": 2,
+      "community": 4,
       "norm_label": ".register()"
     },
     {
@@ -804,7 +813,7 @@
       "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L18",
       "id": "auth_controller_authcontroller_login",
-      "community": 2,
+      "community": 4,
       "norm_label": ".login()"
     },
     {
@@ -813,7 +822,7 @@
       "source_file": "backend/src/auth/auth.controller.ts",
       "source_location": "L24",
       "id": "auth_controller_authcontroller_refresh",
-      "community": 2,
+      "community": 4,
       "norm_label": ".refresh()"
     },
     {
@@ -822,7 +831,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L1",
       "id": "backend_src_auth_auth_service_ts",
-      "community": 2,
+      "community": 4,
       "norm_label": "auth.service.ts"
     },
     {
@@ -831,7 +840,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L14",
       "id": "auth_service_authservice",
-      "community": 2,
+      "community": 4,
       "norm_label": "authservice"
     },
     {
@@ -840,7 +849,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L15",
       "id": "auth_service_authservice_constructor",
-      "community": 2,
+      "community": 4,
       "norm_label": ".constructor()"
     },
     {
@@ -849,7 +858,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L21",
       "id": "auth_service_authservice_validateuser",
-      "community": 2,
+      "community": 4,
       "norm_label": ".validateuser()"
     },
     {
@@ -858,7 +867,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L31",
       "id": "auth_service_authservice_login",
-      "community": 2,
+      "community": 4,
       "norm_label": ".login()"
     },
     {
@@ -867,7 +876,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L62",
       "id": "auth_service_authservice_register",
-      "community": 2,
+      "community": 1,
       "norm_label": ".register()"
     },
     {
@@ -876,7 +885,7 @@
       "source_file": "backend/src/auth/auth.service.ts",
       "source_location": "L75",
       "id": "auth_service_authservice_refreshtokens",
-      "community": 2,
+      "community": 4,
       "norm_label": ".refreshtokens()"
     },
     {
@@ -885,7 +894,7 @@
       "source_file": "backend/src/auth/auth.module.ts",
       "source_location": "L1",
       "id": "backend_src_auth_auth_module_ts",
-      "community": 19,
+      "community": 20,
       "norm_label": "auth.module.ts"
     },
     {
@@ -894,7 +903,7 @@
       "source_file": "backend/src/auth/auth.module.ts",
       "source_location": "L39",
       "id": "auth_module_authmodule",
-      "community": 19,
+      "community": 20,
       "norm_label": "authmodule"
     },
     {
@@ -903,7 +912,7 @@
       "source_file": "backend/src/auth/dto/login.dto.ts",
       "source_location": "L1",
       "id": "backend_src_auth_dto_login_dto_ts",
-      "community": 20,
+      "community": 21,
       "norm_label": "login.dto.ts"
     },
     {
@@ -912,7 +921,7 @@
       "source_file": "backend/src/auth/dto/login.dto.ts",
       "source_location": "L3",
       "id": "login_dto_logindto",
-      "community": 20,
+      "community": 21,
       "norm_label": "logindto"
     },
     {
@@ -921,7 +930,7 @@
       "source_file": "backend/src/auth/dto/register.dto.ts",
       "source_location": "L1",
       "id": "backend_src_auth_dto_register_dto_ts",
-      "community": 21,
+      "community": 22,
       "norm_label": "register.dto.ts"
     },
     {
@@ -930,7 +939,7 @@
       "source_file": "backend/src/auth/dto/register.dto.ts",
       "source_location": "L3",
       "id": "register_dto_registerdto",
-      "community": 21,
+      "community": 22,
       "norm_label": "registerdto"
     },
     {
@@ -939,7 +948,7 @@
       "source_file": "backend/src/auth/strategies/jwt.strategy.ts",
       "source_location": "L1",
       "id": "backend_src_auth_strategies_jwt_strategy_ts",
-      "community": 11,
+      "community": 12,
       "norm_label": "jwt.strategy.ts"
     },
     {
@@ -948,7 +957,7 @@
       "source_file": "backend/src/auth/strategies/jwt.strategy.ts",
       "source_location": "L7",
       "id": "jwt_strategy_jwtstrategy",
-      "community": 11,
+      "community": 12,
       "norm_label": "jwtstrategy"
     },
     {
@@ -957,7 +966,7 @@
       "source_file": "backend/src/auth/strategies/jwt.strategy.ts",
       "source_location": "L8",
       "id": "jwt_strategy_jwtstrategy_constructor",
-      "community": 11,
+      "community": 12,
       "norm_label": ".constructor()"
     },
     {
@@ -966,7 +975,7 @@
       "source_file": "backend/src/auth/strategies/jwt.strategy.ts",
       "source_location": "L20",
       "id": "jwt_strategy_jwtstrategy_validate",
-      "community": 11,
+      "community": 12,
       "norm_label": ".validate()"
     },
     {
@@ -975,7 +984,7 @@
       "source_file": "backend/src/auth/strategies/jwt-refresh.strategy.ts",
       "source_location": "L1",
       "id": "backend_src_auth_strategies_jwt_refresh_strategy_ts",
-      "community": 12,
+      "community": 13,
       "norm_label": "jwt-refresh.strategy.ts"
     },
     {
@@ -984,7 +993,7 @@
       "source_file": "backend/src/auth/strategies/jwt-refresh.strategy.ts",
       "source_location": "L7",
       "id": "jwt_refresh_strategy_jwtrefreshstrategy",
-      "community": 12,
+      "community": 13,
       "norm_label": "jwtrefreshstrategy"
     },
     {
@@ -993,7 +1002,7 @@
       "source_file": "backend/src/auth/strategies/jwt-refresh.strategy.ts",
       "source_location": "L11",
       "id": "jwt_refresh_strategy_jwtrefreshstrategy_constructor",
-      "community": 12,
+      "community": 13,
       "norm_label": ".constructor()"
     },
     {
@@ -1002,7 +1011,7 @@
       "source_file": "backend/src/auth/strategies/jwt-refresh.strategy.ts",
       "source_location": "L23",
       "id": "jwt_refresh_strategy_jwtrefreshstrategy_validate",
-      "community": 12,
+      "community": 13,
       "norm_label": ".validate()"
     },
     {
@@ -1011,7 +1020,7 @@
       "source_file": "backend/src/auth/guards/jwt-auth.guard.ts",
       "source_location": "L1",
       "id": "backend_src_auth_guards_jwt_auth_guard_ts",
-      "community": 22,
+      "community": 23,
       "norm_label": "jwt-auth.guard.ts"
     },
     {
@@ -1020,7 +1029,7 @@
       "source_file": "backend/src/auth/guards/jwt-auth.guard.ts",
       "source_location": "L5",
       "id": "jwt_auth_guard_jwtauthguard",
-      "community": 22,
+      "community": 23,
       "norm_label": "jwtauthguard"
     },
     {
@@ -1029,7 +1038,7 @@
       "source_file": "backend/src/auth/guards/jwt-refresh.guard.ts",
       "source_location": "L1",
       "id": "backend_src_auth_guards_jwt_refresh_guard_ts",
-      "community": 23,
+      "community": 24,
       "norm_label": "jwt-refresh.guard.ts"
     },
     {
@@ -1038,7 +1047,7 @@
       "source_file": "backend/src/auth/guards/jwt-refresh.guard.ts",
       "source_location": "L5",
       "id": "jwt_refresh_guard_jwtrefreshguard",
-      "community": 23,
+      "community": 24,
       "norm_label": "jwtrefreshguard"
     },
     {
@@ -1119,7 +1128,7 @@
       "source_file": "backend/src/cards/cards.service.ts",
       "source_location": "L153",
       "id": "cards_service_cardsservice_getduecardsgroupedbysubject",
-      "community": 4,
+      "community": 3,
       "norm_label": ".getduecardsgroupedbysubject()"
     },
     {
@@ -1128,7 +1137,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L1",
       "id": "backend_src_cards_cards_controller_ts",
-      "community": 5,
+      "community": 6,
       "norm_label": "cards.controller.ts"
     },
     {
@@ -1137,7 +1146,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L26",
       "id": "cards_controller_cardscontroller",
-      "community": 5,
+      "community": 6,
       "norm_label": "cardscontroller"
     },
     {
@@ -1146,7 +1155,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L27",
       "id": "cards_controller_cardscontroller_constructor",
-      "community": 5,
+      "community": 6,
       "norm_label": ".constructor()"
     },
     {
@@ -1155,7 +1164,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L34",
       "id": "cards_controller_cardscontroller_create",
-      "community": 5,
+      "community": 6,
       "norm_label": ".create()"
     },
     {
@@ -1164,7 +1173,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L43",
       "id": "cards_controller_cardscontroller_findall",
-      "community": 5,
+      "community": 6,
       "norm_label": ".findall()"
     },
     {
@@ -1173,7 +1182,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L57",
       "id": "cards_controller_cardscontroller_handlereview",
-      "community": 5,
+      "community": 6,
       "norm_label": ".handlereview()"
     },
     {
@@ -1182,7 +1191,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L69",
       "id": "cards_controller_cardscontroller_update",
-      "community": 5,
+      "community": 6,
       "norm_label": ".update()"
     },
     {
@@ -1191,7 +1200,7 @@
       "source_file": "backend/src/cards/cards.controller.ts",
       "source_location": "L82",
       "id": "cards_controller_cardscontroller_delete",
-      "community": 5,
+      "community": 6,
       "norm_label": ".delete()"
     },
     {
@@ -1200,7 +1209,7 @@
       "source_file": "backend/src/cards/cards.module.ts",
       "source_location": "L1",
       "id": "backend_src_cards_cards_module_ts",
-      "community": 24,
+      "community": 25,
       "norm_label": "cards.module.ts"
     },
     {
@@ -1209,7 +1218,7 @@
       "source_file": "backend/src/cards/cards.module.ts",
       "source_location": "L19",
       "id": "cards_module_cardsmodule",
-      "community": 24,
+      "community": 25,
       "norm_label": "cardsmodule"
     },
     {
@@ -1218,7 +1227,7 @@
       "source_file": "backend/src/cards/dto/create-card.dto.ts",
       "source_location": "L1",
       "id": "backend_src_cards_dto_create_card_dto_ts",
-      "community": 25,
+      "community": 26,
       "norm_label": "create-card.dto.ts"
     },
     {
@@ -1227,7 +1236,7 @@
       "source_file": "backend/src/cards/dto/create-card.dto.ts",
       "source_location": "L7",
       "id": "create_card_dto_createcarddto",
-      "community": 25,
+      "community": 26,
       "norm_label": "createcarddto"
     },
     {
@@ -1236,7 +1245,7 @@
       "source_file": "backend/src/cards/dto/update-card.dto.ts",
       "source_location": "L1",
       "id": "backend_src_cards_dto_update_card_dto_ts",
-      "community": 26,
+      "community": 27,
       "norm_label": "update-card.dto.ts"
     },
     {
@@ -1245,7 +1254,7 @@
       "source_file": "backend/src/cards/dto/update-card.dto.ts",
       "source_location": "L8",
       "id": "update_card_dto_updatecarddto",
-      "community": 26,
+      "community": 27,
       "norm_label": "updatecarddto"
     },
     {
@@ -1254,7 +1263,7 @@
       "source_file": "backend/src/cards/dto/review-card.dto.ts",
       "source_location": "L1",
       "id": "backend_src_cards_dto_review_card_dto_ts",
-      "community": 27,
+      "community": 28,
       "norm_label": "review-card.dto.ts"
     },
     {
@@ -1263,7 +1272,7 @@
       "source_file": "backend/src/cards/dto/review-card.dto.ts",
       "source_location": "L13",
       "id": "review_card_dto_reviewcarddto",
-      "community": 27,
+      "community": 28,
       "norm_label": "reviewcarddto"
     },
     {
@@ -1272,7 +1281,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/cards/schemas/card.schema.ts",
       "source_location": "L1",
       "id": "users_sourabhnigam_leitnerapp_backend_src_cards_schemas_card_schema_ts",
-      "community": 28,
+      "community": 29,
       "norm_label": "card.schema.ts"
     },
     {
@@ -1281,7 +1290,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/cards/schemas/card.schema.ts",
       "source_location": "L16",
       "id": "card_schema_card",
-      "community": 28,
+      "community": 29,
       "norm_label": "card"
     },
     {
@@ -1290,7 +1299,7 @@
       "source_file": "backend/src/scheduler/scheduler.service.ts",
       "source_location": "L1",
       "id": "backend_src_scheduler_scheduler_service_ts",
-      "community": 4,
+      "community": 3,
       "norm_label": "scheduler.service.ts"
     },
     {
@@ -1299,7 +1308,7 @@
       "source_file": "backend/src/scheduler/scheduler.service.ts",
       "source_location": "L8",
       "id": "scheduler_service_schedulerservice",
-      "community": 4,
+      "community": 3,
       "norm_label": "schedulerservice"
     },
     {
@@ -1308,7 +1317,7 @@
       "source_file": "backend/src/scheduler/scheduler.service.ts",
       "source_location": "L11",
       "id": "scheduler_service_schedulerservice_constructor",
-      "community": 4,
+      "community": 3,
       "norm_label": ".constructor()"
     },
     {
@@ -1317,7 +1326,7 @@
       "source_file": "backend/src/scheduler/scheduler.service.ts",
       "source_location": "L18",
       "id": "scheduler_service_schedulerservice_senddailyreminders",
-      "community": 4,
+      "community": 3,
       "norm_label": ".senddailyreminders()"
     },
     {
@@ -1326,7 +1335,7 @@
       "source_file": "backend/src/scheduler/scheduler.module.ts",
       "source_location": "L1",
       "id": "backend_src_scheduler_scheduler_module_ts",
-      "community": 29,
+      "community": 30,
       "norm_label": "scheduler.module.ts"
     },
     {
@@ -1335,7 +1344,7 @@
       "source_file": "backend/src/scheduler/scheduler.module.ts",
       "source_location": "L11",
       "id": "scheduler_module_schedulermodule",
-      "community": 29,
+      "community": 30,
       "norm_label": "schedulermodule"
     },
     {
@@ -1344,7 +1353,7 @@
       "source_file": "backend/src/tags/tags.service.ts",
       "source_location": "L1",
       "id": "backend_src_tags_tags_service_ts",
-      "community": 1,
+      "community": 8,
       "norm_label": "tags.service.ts"
     },
     {
@@ -1353,7 +1362,7 @@
       "source_file": "backend/src/tags/tags.service.ts",
       "source_location": "L16",
       "id": "tags_service_tagsservice",
-      "community": 1,
+      "community": 8,
       "norm_label": "tagsservice"
     },
     {
@@ -1362,7 +1371,7 @@
       "source_file": "backend/src/tags/tags.service.ts",
       "source_location": "L17",
       "id": "tags_service_tagsservice_constructor",
-      "community": 1,
+      "community": 8,
       "norm_label": ".constructor()"
     },
     {
@@ -1371,7 +1380,7 @@
       "source_file": "backend/src/tags/tags.service.ts",
       "source_location": "L26",
       "id": "tags_service_tagsservice_create",
-      "community": 1,
+      "community": 8,
       "norm_label": ".create()"
     },
     {
@@ -1380,7 +1389,7 @@
       "source_file": "backend/src/tags/tags.service.ts",
       "source_location": "L47",
       "id": "tags_service_tagsservice_findall",
-      "community": 1,
+      "community": 8,
       "norm_label": ".findall()"
     },
     {
@@ -1389,7 +1398,7 @@
       "source_file": "backend/src/tags/tags.service.ts",
       "source_location": "L60",
       "id": "tags_service_tagsservice_delete",
-      "community": 1,
+      "community": 8,
       "norm_label": ".delete()"
     },
     {
@@ -1398,7 +1407,7 @@
       "source_file": "backend/src/tags/tags.controller.ts",
       "source_location": "L1",
       "id": "backend_src_tags_tags_controller_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "tags.controller.ts"
     },
     {
@@ -1407,7 +1416,7 @@
       "source_file": "backend/src/tags/tags.controller.ts",
       "source_location": "L19",
       "id": "tags_controller_tagscontroller",
-      "community": 8,
+      "community": 9,
       "norm_label": "tagscontroller"
     },
     {
@@ -1416,7 +1425,7 @@
       "source_file": "backend/src/tags/tags.controller.ts",
       "source_location": "L20",
       "id": "tags_controller_tagscontroller_constructor",
-      "community": 8,
+      "community": 9,
       "norm_label": ".constructor()"
     },
     {
@@ -1425,7 +1434,7 @@
       "source_file": "backend/src/tags/tags.controller.ts",
       "source_location": "L23",
       "id": "tags_controller_tagscontroller_create",
-      "community": 8,
+      "community": 9,
       "norm_label": ".create()"
     },
     {
@@ -1434,7 +1443,7 @@
       "source_file": "backend/src/tags/tags.controller.ts",
       "source_location": "L31",
       "id": "tags_controller_tagscontroller_findall",
-      "community": 8,
+      "community": 9,
       "norm_label": ".findall()"
     },
     {
@@ -1443,7 +1452,7 @@
       "source_file": "backend/src/tags/tags.controller.ts",
       "source_location": "L36",
       "id": "tags_controller_tagscontroller_delete",
-      "community": 8,
+      "community": 9,
       "norm_label": ".delete()"
     },
     {
@@ -1452,7 +1461,7 @@
       "source_file": "backend/src/tags/tags.module.ts",
       "source_location": "L1",
       "id": "backend_src_tags_tags_module_ts",
-      "community": 30,
+      "community": 31,
       "norm_label": "tags.module.ts"
     },
     {
@@ -1461,7 +1470,7 @@
       "source_file": "backend/src/tags/tags.module.ts",
       "source_location": "L13",
       "id": "tags_module_tagsmodule",
-      "community": 30,
+      "community": 31,
       "norm_label": "tagsmodule"
     },
     {
@@ -1470,7 +1479,7 @@
       "source_file": "backend/src/tags/dto/create-tag.dto.ts",
       "source_location": "L1",
       "id": "backend_src_tags_dto_create_tag_dto_ts",
-      "community": 31,
+      "community": 32,
       "norm_label": "create-tag.dto.ts"
     },
     {
@@ -1479,7 +1488,7 @@
       "source_file": "backend/src/tags/dto/create-tag.dto.ts",
       "source_location": "L4",
       "id": "create_tag_dto_createtagdto",
-      "community": 31,
+      "community": 32,
       "norm_label": "createtagdto"
     },
     {
@@ -1488,7 +1497,7 @@
       "source_file": "backend/src/tags/schemas/tag.schema.ts",
       "source_location": "L1",
       "id": "backend_src_tags_schemas_tag_schema_ts",
-      "community": 32,
+      "community": 33,
       "norm_label": "tag.schema.ts"
     },
     {
@@ -1497,7 +1506,7 @@
       "source_file": "backend/src/tags/schemas/tag.schema.ts",
       "source_location": "L9",
       "id": "tag_schema_tag",
-      "community": 32,
+      "community": 33,
       "norm_label": "tag"
     },
     {
@@ -1506,7 +1515,7 @@
       "source_file": "backend/src/card-logs/card-logs.controller.ts",
       "source_location": "L1",
       "id": "backend_src_card_logs_card_logs_controller_ts",
-      "community": 10,
+      "community": 11,
       "norm_label": "card-logs.controller.ts"
     },
     {
@@ -1515,7 +1524,7 @@
       "source_file": "backend/src/card-logs/card-logs.controller.ts",
       "source_location": "L7",
       "id": "card_logs_controller_cardlogscontroller",
-      "community": 10,
+      "community": 11,
       "norm_label": "cardlogscontroller"
     },
     {
@@ -1524,7 +1533,7 @@
       "source_file": "backend/src/card-logs/card-logs.controller.ts",
       "source_location": "L8",
       "id": "card_logs_controller_cardlogscontroller_constructor",
-      "community": 10,
+      "community": 11,
       "norm_label": ".constructor()"
     },
     {
@@ -1533,7 +1542,7 @@
       "source_file": "backend/src/card-logs/card-logs.controller.ts",
       "source_location": "L11",
       "id": "card_logs_controller_cardlogscontroller_getcardlogs",
-      "community": 10,
+      "community": 11,
       "norm_label": ".getcardlogs()"
     },
     {
@@ -1578,7 +1587,7 @@
       "source_file": "backend/src/card-logs/card-logs.service.ts",
       "source_location": "L30",
       "id": "card_logs_service_cardlogsservice_getlogsforcard",
-      "community": 10,
+      "community": 11,
       "norm_label": ".getlogsforcard()"
     },
     {
@@ -1605,7 +1614,7 @@
       "source_file": "backend/src/card-logs/card-logs.module.ts",
       "source_location": "L1",
       "id": "backend_src_card_logs_card_logs_module_ts",
-      "community": 33,
+      "community": 34,
       "norm_label": "card-logs.module.ts"
     },
     {
@@ -1614,7 +1623,7 @@
       "source_file": "backend/src/card-logs/card-logs.module.ts",
       "source_location": "L15",
       "id": "card_logs_module_cardlogsmodule",
-      "community": 33,
+      "community": 34,
       "norm_label": "cardlogsmodule"
     },
     {
@@ -1623,7 +1632,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/card-logs/schemas/card-log.schema.ts",
       "source_location": "L1",
       "id": "users_sourabhnigam_leitnerapp_backend_src_card_logs_schemas_card_log_schema_ts",
-      "community": 34,
+      "community": 35,
       "norm_label": "card-log.schema.ts"
     },
     {
@@ -1632,7 +1641,7 @@
       "source_file": "/Users/sourabhnigam/leitnerApp/backend/src/card-logs/schemas/card-log.schema.ts",
       "source_location": "L13",
       "id": "card_log_schema_cardlog",
-      "community": 34,
+      "community": 35,
       "norm_label": "cardlog"
     },
     {
@@ -1641,7 +1650,7 @@
       "source_file": "backend/src/subjects/subjects.module.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_module_ts",
-      "community": 35,
+      "community": 36,
       "norm_label": "subjects.module.ts"
     },
     {
@@ -1650,7 +1659,7 @@
       "source_file": "backend/src/subjects/subjects.module.ts",
       "source_location": "L19",
       "id": "subjects_module_subjectsmodule",
-      "community": 35,
+      "community": 36,
       "norm_label": "subjectsmodule"
     },
     {
@@ -1713,7 +1722,7 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_subjects_controller_ts",
-      "community": 9,
+      "community": 10,
       "norm_label": "subjects.controller.ts"
     },
     {
@@ -1722,7 +1731,7 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L19",
       "id": "subjects_controller_subjectscontroller",
-      "community": 9,
+      "community": 10,
       "norm_label": "subjectscontroller"
     },
     {
@@ -1731,7 +1740,7 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L20",
       "id": "subjects_controller_subjectscontroller_constructor",
-      "community": 9,
+      "community": 10,
       "norm_label": ".constructor()"
     },
     {
@@ -1740,7 +1749,7 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L23",
       "id": "subjects_controller_subjectscontroller_create",
-      "community": 9,
+      "community": 10,
       "norm_label": ".create()"
     },
     {
@@ -1749,7 +1758,7 @@
       "source_file": "backend/src/subjects/subjects.controller.ts",
       "source_location": "L31",
       "id": "subjects_controller_subjectscontroller_findall",
-      "community": 9,
+      "community": 10,
       "norm_label": ".findall()"
     },
     {
@@ -1767,7 +1776,7 @@
       "source_file": "backend/src/subjects/dto/create-subject.dto.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_dto_create_subject_dto_ts",
-      "community": 36,
+      "community": 37,
       "norm_label": "create-subject.dto.ts"
     },
     {
@@ -1776,7 +1785,7 @@
       "source_file": "backend/src/subjects/dto/create-subject.dto.ts",
       "source_location": "L4",
       "id": "create_subject_dto_createsubjectdto",
-      "community": 36,
+      "community": 37,
       "norm_label": "createsubjectdto"
     },
     {
@@ -1785,7 +1794,7 @@
       "source_file": "backend/src/subjects/schemas/subject.schema.ts",
       "source_location": "L1",
       "id": "backend_src_subjects_schemas_subject_schema_ts",
-      "community": 37,
+      "community": 38,
       "norm_label": "subject.schema.ts"
     },
     {
@@ -1794,7 +1803,7 @@
       "source_file": "backend/src/subjects/schemas/subject.schema.ts",
       "source_location": "L8",
       "id": "subject_schema_subject",
-      "community": 37,
+      "community": 38,
       "norm_label": "subject"
     },
     {
@@ -1803,7 +1812,7 @@
       "source_file": "backend/src/users/users.service.ts",
       "source_location": "L1",
       "id": "backend_src_users_users_service_ts",
-      "community": 2,
+      "community": 1,
       "norm_label": "users.service.ts"
     },
     {
@@ -1812,7 +1821,7 @@
       "source_file": "backend/src/users/users.service.ts",
       "source_location": "L9",
       "id": "users_service_usersservice",
-      "community": 2,
+      "community": 1,
       "norm_label": "usersservice"
     },
     {
@@ -1821,7 +1830,7 @@
       "source_file": "backend/src/users/users.service.ts",
       "source_location": "L10",
       "id": "users_service_usersservice_constructor",
-      "community": 2,
+      "community": 1,
       "norm_label": ".constructor()"
     },
     {
@@ -1830,7 +1839,7 @@
       "source_file": "backend/src/users/users.service.ts",
       "source_location": "L12",
       "id": "users_service_usersservice_create",
-      "community": 2,
+      "community": 1,
       "norm_label": ".create()"
     },
     {
@@ -1848,7 +1857,7 @@
       "source_file": "backend/src/users/users.service.ts",
       "source_location": "L26",
       "id": "users_service_usersservice_findall",
-      "community": 2,
+      "community": 1,
       "norm_label": ".findall()"
     },
     {
@@ -1857,7 +1866,7 @@
       "source_file": "backend/src/users/users.module.ts",
       "source_location": "L1",
       "id": "backend_src_users_users_module_ts",
-      "community": 38,
+      "community": 39,
       "norm_label": "users.module.ts"
     },
     {
@@ -1866,7 +1875,7 @@
       "source_file": "backend/src/users/users.module.ts",
       "source_location": "L13",
       "id": "users_module_usersmodule",
-      "community": 38,
+      "community": 39,
       "norm_label": "usersmodule"
     },
     {
@@ -1875,7 +1884,7 @@
       "source_file": "backend/src/users/dto/create-user.dto.ts",
       "source_location": "L1",
       "id": "backend_src_users_dto_create_user_dto_ts",
-      "community": 39,
+      "community": 40,
       "norm_label": "create-user.dto.ts"
     },
     {
@@ -1884,7 +1893,7 @@
       "source_file": "backend/src/users/dto/create-user.dto.ts",
       "source_location": "L9",
       "id": "create_user_dto_createuserdto",
-      "community": 39,
+      "community": 40,
       "norm_label": "createuserdto"
     },
     {
@@ -1893,7 +1902,7 @@
       "source_file": "backend/src/users/schemas/user.schema.ts",
       "source_location": "L1",
       "id": "backend_src_users_schemas_user_schema_ts",
-      "community": 40,
+      "community": 41,
       "norm_label": "user.schema.ts"
     },
     {
@@ -1902,7 +1911,7 @@
       "source_file": "backend/src/users/schemas/user.schema.ts",
       "source_location": "L7",
       "id": "user_schema_user",
-      "community": 40,
+      "community": 41,
       "norm_label": "user"
     },
     {
@@ -1911,7 +1920,7 @@
       "source_file": "backend/src/notifications/notifications.module.ts",
       "source_location": "L1",
       "id": "backend_src_notifications_notifications_module_ts",
-      "community": 41,
+      "community": 42,
       "norm_label": "notifications.module.ts"
     },
     {
@@ -1920,7 +1929,7 @@
       "source_file": "backend/src/notifications/notifications.module.ts",
       "source_location": "L8",
       "id": "notifications_module_notificationsmodule",
-      "community": 41,
+      "community": 42,
       "norm_label": "notificationsmodule"
     },
     {
@@ -1929,7 +1938,7 @@
       "source_file": "backend/src/notifications/email.service.ts",
       "source_location": "L1",
       "id": "backend_src_notifications_email_service_ts",
-      "community": 4,
+      "community": 3,
       "norm_label": "email.service.ts"
     },
     {
@@ -1938,7 +1947,7 @@
       "source_file": "backend/src/notifications/email.service.ts",
       "source_location": "L10",
       "id": "email_service_emailservice",
-      "community": 4,
+      "community": 3,
       "norm_label": "emailservice"
     },
     {
@@ -1947,7 +1956,7 @@
       "source_file": "backend/src/notifications/email.service.ts",
       "source_location": "L14",
       "id": "email_service_emailservice_constructor",
-      "community": 4,
+      "community": 3,
       "norm_label": ".constructor()"
     },
     {
@@ -1956,7 +1965,7 @@
       "source_file": "backend/src/notifications/email.service.ts",
       "source_location": "L26",
       "id": "email_service_emailservice_senddailyreminder",
-      "community": 4,
+      "community": 3,
       "norm_label": ".senddailyreminder()"
     },
     {
@@ -1965,7 +1974,7 @@
       "source_file": "backend/src/notifications/interfaces/notification-channel.interface.ts",
       "source_location": "L1",
       "id": "backend_src_notifications_interfaces_notification_channel_interface_ts",
-      "community": 48,
+      "community": 49,
       "norm_label": "notification-channel.interface.ts"
     },
     {
@@ -1974,7 +1983,7 @@
       "source_file": "backend/src/boxes/boxes.module.ts",
       "source_location": "L1",
       "id": "backend_src_boxes_boxes_module_ts",
-      "community": 42,
+      "community": 43,
       "norm_label": "boxes.module.ts"
     },
     {
@@ -1983,7 +1992,7 @@
       "source_file": "backend/src/boxes/boxes.module.ts",
       "source_location": "L13",
       "id": "boxes_module_boxesmodule",
-      "community": 42,
+      "community": 43,
       "norm_label": "boxesmodule"
     },
     {
@@ -1992,7 +2001,7 @@
       "source_file": "backend/src/boxes/boxes.controller.ts",
       "source_location": "L1",
       "id": "backend_src_boxes_boxes_controller_ts",
-      "community": 13,
+      "community": 14,
       "norm_label": "boxes.controller.ts"
     },
     {
@@ -2001,7 +2010,7 @@
       "source_file": "backend/src/boxes/boxes.controller.ts",
       "source_location": "L8",
       "id": "boxes_controller_boxescontroller",
-      "community": 13,
+      "community": 14,
       "norm_label": "boxescontroller"
     },
     {
@@ -2010,7 +2019,7 @@
       "source_file": "backend/src/boxes/boxes.controller.ts",
       "source_location": "L9",
       "id": "boxes_controller_boxescontroller_constructor",
-      "community": 13,
+      "community": 14,
       "norm_label": ".constructor()"
     },
     {
@@ -2019,7 +2028,7 @@
       "source_file": "backend/src/boxes/boxes.controller.ts",
       "source_location": "L16",
       "id": "boxes_controller_boxescontroller_findall",
-      "community": 13,
+      "community": 14,
       "norm_label": ".findall()"
     },
     {
@@ -2028,7 +2037,7 @@
       "source_file": "backend/src/boxes/boxes.service.ts",
       "source_location": "L1",
       "id": "backend_src_boxes_boxes_service_ts",
-      "community": 4,
+      "community": 3,
       "norm_label": "boxes.service.ts"
     },
     {
@@ -2037,7 +2046,7 @@
       "source_file": "backend/src/boxes/boxes.service.ts",
       "source_location": "L11",
       "id": "boxes_service_boxesservice",
-      "community": 4,
+      "community": 3,
       "norm_label": "boxesservice"
     },
     {
@@ -2046,7 +2055,7 @@
       "source_file": "backend/src/boxes/boxes.service.ts",
       "source_location": "L12",
       "id": "boxes_service_boxesservice_constructor",
-      "community": 4,
+      "community": 3,
       "norm_label": ".constructor()"
     },
     {
@@ -2055,7 +2064,7 @@
       "source_file": "backend/src/boxes/boxes.service.ts",
       "source_location": "L18",
       "id": "boxes_service_boxesservice_findall",
-      "community": 4,
+      "community": 3,
       "norm_label": ".findall()"
     },
     {
@@ -2073,7 +2082,7 @@
       "source_file": "backend/src/boxes/schemas/box.schema.ts",
       "source_location": "L1",
       "id": "backend_src_boxes_schemas_box_schema_ts",
-      "community": 43,
+      "community": 44,
       "norm_label": "box.schema.ts"
     },
     {
@@ -2082,7 +2091,7 @@
       "source_file": "backend/src/boxes/schemas/box.schema.ts",
       "source_location": "L13",
       "id": "box_schema_box",
-      "community": 43,
+      "community": 44,
       "norm_label": "box"
     },
     {
@@ -2094,7 +2103,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 16,
       "norm_label": "leitner system",
       "id": "cron_email_plan_leitner_system"
     },
@@ -2107,7 +2116,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 16,
       "norm_label": "daily email reminder feature",
       "id": "cron_email_plan_daily_email_reminder"
     },
@@ -2120,7 +2129,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "notifications module",
       "id": "cron_email_plan_notifications_module"
     },
@@ -2133,7 +2142,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "scheduler module",
       "id": "cron_email_plan_scheduler_module"
     },
@@ -2224,7 +2233,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 16,
       "norm_label": "spaced repetition learning",
       "id": "readme_spaced_repetition"
     },
@@ -2237,7 +2246,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 15,
       "norm_label": "jwt authentication system",
       "id": "readme_jwt_authentication"
     },
@@ -2250,7 +2259,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 15,
       "norm_label": "authmodule",
       "id": "readme_authmodule"
     },
@@ -2263,7 +2272,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "usersmodule",
       "id": "readme_usersmodule"
     },
@@ -2276,7 +2285,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 49,
+      "community": 50,
       "norm_label": "databasemodule",
       "id": "readme_databasemodule"
     },
@@ -2289,7 +2298,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "subjectsmodule",
       "id": "readme_subjectsmodule"
     },
@@ -2302,7 +2311,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "boxesmodule",
       "id": "readme_boxesmodule"
     },
@@ -2315,7 +2324,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "cardsmodule",
       "id": "readme_cardsmodule"
     },
@@ -2328,7 +2337,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "tagsmodule",
       "id": "readme_tagsmodule"
     },
@@ -2341,7 +2350,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "user schema",
       "id": "readme_user_schema"
     },
@@ -2354,7 +2363,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "subject schema",
       "id": "readme_subject_schema"
     },
@@ -2367,7 +2376,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "box schema",
       "id": "readme_box_schema"
     },
@@ -2380,7 +2389,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "card schema",
       "id": "readme_card_schema"
     },
@@ -2393,7 +2402,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "tag schema",
       "id": "readme_tag_schema"
     },
@@ -2419,7 +2428,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 50,
+      "community": 51,
       "norm_label": "main application ui",
       "id": "index_main_ui"
     },
@@ -2432,7 +2441,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "review area component",
       "id": "index_review_area"
     },
@@ -2445,7 +2454,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "leitner box container",
       "id": "index_leitner_container"
     },
@@ -2458,7 +2467,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 51,
+      "community": 52,
       "norm_label": "sidebar filter components",
       "id": "index_sidebar_filters"
     },
@@ -2471,7 +2480,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "create card modal",
       "id": "index_create_card_modal"
     },
@@ -2484,7 +2493,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "manage subjects modal",
       "id": "index_manage_subjects_modal"
     },
@@ -2497,7 +2506,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 2,
       "norm_label": "manage tags modal",
       "id": "index_manage_tags_modal"
     },
@@ -2510,7 +2519,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 52,
+      "community": 53,
       "norm_label": "dark mode toggle",
       "id": "index_dark_mode_toggle"
     },
@@ -2523,7 +2532,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 53,
+      "community": 54,
       "norm_label": "review timer component",
       "id": "index_review_timer"
     },
@@ -2536,7 +2545,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 54,
+      "community": 55,
       "norm_label": "card logs panel",
       "id": "index_card_logs_panel"
     },
@@ -2549,7 +2558,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 15,
       "norm_label": "user registration form",
       "id": "register_registration_form"
     },
@@ -2562,7 +2571,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 14,
+      "community": 15,
       "norm_label": "user login form",
       "id": "login_login_form"
     },
@@ -2575,7 +2584,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 55,
+      "community": 56,
       "norm_label": "nestjs framework",
       "id": "backend_readme_nestjs"
     }
@@ -2584,716 +2593,716 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L68",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L69",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_fetchwithauth",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_fetchwithauth",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L94",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L95",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_initializeapp",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_initializeapp",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L99",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L100",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_refreshui",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_refreshui",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L110",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L111",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_addeventlisteners",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_addeventlisteners",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L135",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L136",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_fetchboxes",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_fetchboxes",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L146",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L147",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_fetchtags",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_fetchtags",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L160",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L161",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_fetchcards",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_fetchcards",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L182",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L183",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_renderboxes",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_renderboxes",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L215",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L216",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendercards",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendercards",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L230",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L231",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendersubjects",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendersubjects",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L244",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L245",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendersubjectfilter",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendersubjectfilter",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L256",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L257",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handlesubjectfilterchange",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handlesubjectfilterchange",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L263",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L264",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handlecreatesubject",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handlecreatesubject",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L274",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L275",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handledeletesubject",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handledeletesubject",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L282",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L283",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_renderalltagelements",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_renderalltagelements",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L288",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L289",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendercardsubjectselector",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendercardsubjectselector",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L326",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L327",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendercolorselector",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendercolorselector",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L358",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L359",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendertaglist",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendertaglist",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L371",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L372",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendertagfilters",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendertagfilters",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L385",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L386",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendercardtagcheckboxes",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendercardtagcheckboxes",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L399",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L400",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_createcardelement",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_createcardelement",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L447",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L448",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_toggleeditmode",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_toggleeditmode",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L503",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L504",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendertagcheckboxes",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendertagcheckboxes",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L517",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L518",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_exiteditmode",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_exiteditmode",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L543",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L544",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_displaycardforreview",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_displaycardforreview",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L571",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L572",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_togglecardlogs",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_togglecardlogs",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L580",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L581",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_hidecardlogs",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_hidecardlogs",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L586",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L587",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_loadandrendercardlogs",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_loadandrendercardlogs",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L593",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L594",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_rendercardlogs",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_rendercardlogs",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L641",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L642",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_displaynextcardinqueue",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_displaynextcardinqueue",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L662",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L663",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_reviewaction",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_reviewaction",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L671",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L674",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handlecreatecard",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handlecreatecard",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L691",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L694",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handlecreatetag",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handlecreatetag",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L706",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L709",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handledeletetag",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handledeletetag",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L714",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L717",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handlefilterchange",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handlefilterchange",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L726",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L729",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_createcard",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_createcard",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L739",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L742",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_updatecard",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_updatecard",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L752",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L755",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_deletecard",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_deletecard",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L764",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L767",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_createtag",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_createtag",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L777",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L780",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_deletetag",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_deletetag",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L789",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L792",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_fetchsubjects",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_fetchsubjects",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L800",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L803",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_createsubject",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_createsubject",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L813",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L816",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_deletesubject",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_deletesubject",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L830",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L833",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_handlecardreview",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_handlecardreview",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L843",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L846",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_fetchcardlogs",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_fetchcardlogs",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L855",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L858",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_adddraganddroplisteners",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_adddraganddroplisteners",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L868",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L871",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_ondragstart",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_ondragstart",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L877",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L880",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_ondragend",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_ondragend",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L882",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L885",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_ondragover",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_ondragover",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L888",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L891",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_ondragleave",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_ondragleave",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L892",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L895",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_ondrop",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_ondrop",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L909",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L912",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_showtimerui",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_showtimerui",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L913",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L916",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_hidetimerui",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_hidetimerui",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L917",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L920",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_starttimer",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_starttimer",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L940",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L944",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_startinterval",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_startinterval",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L966",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L970",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_pausetimer",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_pausetimer",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L974",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L978",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_resettimer",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_resettimer",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L989",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L994",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_updatetimerdisplay",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_updatetimerdisplay",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L995",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L1000",
       "weight": 1.0,
-      "_src": "frontend_frontend_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "_tgt": "frontend_timerflash",
-      "source": "frontend_frontend_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_frontend_js",
       "target": "frontend_timerflash",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L137",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L138",
       "weight": 1.0,
       "_src": "frontend_fetchboxes",
       "_tgt": "frontend_fetchwithauth",
@@ -3304,8 +3313,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L151",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L152",
       "weight": 1.0,
       "_src": "frontend_fetchtags",
       "_tgt": "frontend_fetchwithauth",
@@ -3316,8 +3325,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L171",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L172",
       "weight": 1.0,
       "_src": "frontend_fetchcards",
       "_tgt": "frontend_fetchwithauth",
@@ -3328,8 +3337,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L469",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L470",
       "weight": 1.0,
       "_src": "frontend_toggleeditmode",
       "_tgt": "frontend_fetchwithauth",
@@ -3340,8 +3349,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L728",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L731",
       "weight": 1.0,
       "_src": "frontend_createcard",
       "_tgt": "frontend_fetchwithauth",
@@ -3352,8 +3361,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L741",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L744",
       "weight": 1.0,
       "_src": "frontend_updatecard",
       "_tgt": "frontend_fetchwithauth",
@@ -3364,8 +3373,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L754",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L757",
       "weight": 1.0,
       "_src": "frontend_deletecard",
       "_tgt": "frontend_fetchwithauth",
@@ -3376,8 +3385,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L766",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L769",
       "weight": 1.0,
       "_src": "frontend_createtag",
       "_tgt": "frontend_fetchwithauth",
@@ -3388,8 +3397,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L779",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L782",
       "weight": 1.0,
       "_src": "frontend_deletetag",
       "_tgt": "frontend_fetchwithauth",
@@ -3400,8 +3409,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L791",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L794",
       "weight": 1.0,
       "_src": "frontend_fetchsubjects",
       "_tgt": "frontend_fetchwithauth",
@@ -3412,8 +3421,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L802",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L805",
       "weight": 1.0,
       "_src": "frontend_createsubject",
       "_tgt": "frontend_fetchwithauth",
@@ -3424,8 +3433,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L815",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L818",
       "weight": 1.0,
       "_src": "frontend_deletesubject",
       "_tgt": "frontend_fetchwithauth",
@@ -3436,8 +3445,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L832",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L835",
       "weight": 1.0,
       "_src": "frontend_handlecardreview",
       "_tgt": "frontend_fetchwithauth",
@@ -3448,8 +3457,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L845",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L848",
       "weight": 1.0,
       "_src": "frontend_fetchcardlogs",
       "_tgt": "frontend_fetchwithauth",
@@ -3484,8 +3493,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L95",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L96",
       "weight": 1.0,
       "_src": "frontend_initializeapp",
       "_tgt": "frontend_addeventlisteners",
@@ -3496,8 +3505,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L96",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L97",
       "weight": 1.0,
       "_src": "frontend_initializeapp",
       "_tgt": "frontend_refreshui",
@@ -3508,8 +3517,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L100",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L101",
       "weight": 1.0,
       "_src": "frontend_refreshui",
       "_tgt": "frontend_fetchboxes",
@@ -3520,8 +3529,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L101",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L102",
       "weight": 1.0,
       "_src": "frontend_refreshui",
       "_tgt": "frontend_fetchsubjects",
@@ -3532,8 +3541,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L102",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L103",
       "weight": 1.0,
       "_src": "frontend_refreshui",
       "_tgt": "frontend_fetchtags",
@@ -3544,8 +3553,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L103",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L104",
       "weight": 1.0,
       "_src": "frontend_refreshui",
       "_tgt": "frontend_fetchcards",
@@ -3556,8 +3565,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L104",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L105",
       "weight": 1.0,
       "_src": "frontend_refreshui",
       "_tgt": "frontend_adddraganddroplisteners",
@@ -3568,8 +3577,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L106",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L107",
       "weight": 1.0,
       "_src": "frontend_refreshui",
       "_tgt": "frontend_displaynextcardinqueue",
@@ -3580,8 +3589,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L259",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L260",
       "weight": 1.0,
       "_src": "frontend_handlesubjectfilterchange",
       "_tgt": "frontend_refreshui",
@@ -3592,8 +3601,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L668",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L671",
       "weight": 1.0,
       "_src": "frontend_reviewaction",
       "_tgt": "frontend_refreshui",
@@ -3604,8 +3613,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L688",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L691",
       "weight": 1.0,
       "_src": "frontend_handlecreatecard",
       "_tgt": "frontend_refreshui",
@@ -3616,8 +3625,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L710",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L713",
       "weight": 1.0,
       "_src": "frontend_handledeletetag",
       "_tgt": "frontend_refreshui",
@@ -3628,8 +3637,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L905",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L908",
       "weight": 1.0,
       "_src": "frontend_ondrop",
       "_tgt": "frontend_refreshui",
@@ -3640,8 +3649,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L140",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L141",
       "weight": 1.0,
       "_src": "frontend_fetchboxes",
       "_tgt": "frontend_renderboxes",
@@ -3652,8 +3661,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L154",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L155",
       "weight": 1.0,
       "_src": "frontend_fetchtags",
       "_tgt": "frontend_renderalltagelements",
@@ -3664,8 +3673,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L703",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L706",
       "weight": 1.0,
       "_src": "frontend_handlecreatetag",
       "_tgt": "frontend_fetchtags",
@@ -3676,8 +3685,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L174",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L175",
       "weight": 1.0,
       "_src": "frontend_fetchcards",
       "_tgt": "frontend_rendercards",
@@ -3688,8 +3697,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L721",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L724",
       "weight": 1.0,
       "_src": "frontend_handlefilterchange",
       "_tgt": "frontend_fetchcards",
@@ -3700,8 +3709,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L227",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L228",
       "weight": 1.0,
       "_src": "frontend_rendercards",
       "_tgt": "frontend_adddraganddroplisteners",
@@ -3712,8 +3721,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L241",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L242",
       "weight": 1.0,
       "_src": "frontend_rendersubjects",
       "_tgt": "frontend_rendersubjectfilter",
@@ -3724,8 +3733,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L794",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L797",
       "weight": 1.0,
       "_src": "frontend_fetchsubjects",
       "_tgt": "frontend_rendersubjects",
@@ -3736,8 +3745,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L269",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L270",
       "weight": 1.0,
       "_src": "frontend_handlecreatesubject",
       "_tgt": "frontend_createsubject",
@@ -3748,8 +3757,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L271",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L272",
       "weight": 1.0,
       "_src": "frontend_handlecreatesubject",
       "_tgt": "frontend_fetchsubjects",
@@ -3760,8 +3769,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L277",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L278",
       "weight": 1.0,
       "_src": "frontend_handledeletesubject",
       "_tgt": "frontend_deletesubject",
@@ -3772,8 +3781,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L278",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L279",
       "weight": 1.0,
       "_src": "frontend_handledeletesubject",
       "_tgt": "frontend_fetchsubjects",
@@ -3784,8 +3793,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L283",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L284",
       "weight": 1.0,
       "_src": "frontend_renderalltagelements",
       "_tgt": "frontend_rendertaglist",
@@ -3796,8 +3805,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L284",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L285",
       "weight": 1.0,
       "_src": "frontend_renderalltagelements",
       "_tgt": "frontend_rendertagfilters",
@@ -3808,8 +3817,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L285",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L286",
       "weight": 1.0,
       "_src": "frontend_renderalltagelements",
       "_tgt": "frontend_rendertagcheckboxes",
@@ -3820,8 +3829,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L463",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L464",
       "weight": 1.0,
       "_src": "frontend_toggleeditmode",
       "_tgt": "frontend_rendercardsubjectselector",
@@ -3832,8 +3841,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L476",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L477",
       "weight": 1.0,
       "_src": "frontend_toggleeditmode",
       "_tgt": "frontend_rendercolorselector",
@@ -3844,8 +3853,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L546",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L547",
       "weight": 1.0,
       "_src": "frontend_displaycardforreview",
       "_tgt": "frontend_createcardelement",
@@ -3856,8 +3865,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L472",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L473",
       "weight": 1.0,
       "_src": "frontend_toggleeditmode",
       "_tgt": "frontend_rendertagcheckboxes",
@@ -3868,8 +3877,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L566",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L567",
       "weight": 1.0,
       "_src": "frontend_displaycardforreview",
       "_tgt": "frontend_hidecardlogs",
@@ -3880,8 +3889,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L567",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L568",
       "weight": 1.0,
       "_src": "frontend_displaycardforreview",
       "_tgt": "frontend_showtimerui",
@@ -3892,8 +3901,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L568",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L569",
       "weight": 1.0,
       "_src": "frontend_displaycardforreview",
       "_tgt": "frontend_resettimer",
@@ -3904,8 +3913,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L651",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L652",
       "weight": 1.0,
       "_src": "frontend_displaynextcardinqueue",
       "_tgt": "frontend_displaycardforreview",
@@ -3916,8 +3925,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L574",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L575",
       "weight": 1.0,
       "_src": "frontend_togglecardlogs",
       "_tgt": "frontend_loadandrendercardlogs",
@@ -3928,8 +3937,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L642",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L643",
       "weight": 1.0,
       "_src": "frontend_displaynextcardinqueue",
       "_tgt": "frontend_hidecardlogs",
@@ -3940,8 +3949,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L667",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L670",
       "weight": 1.0,
       "_src": "frontend_reviewaction",
       "_tgt": "frontend_hidecardlogs",
@@ -3952,8 +3961,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L589",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L590",
       "weight": 1.0,
       "_src": "frontend_loadandrendercardlogs",
       "_tgt": "frontend_fetchcardlogs",
@@ -3964,8 +3973,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L590",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L591",
       "weight": 1.0,
       "_src": "frontend_loadandrendercardlogs",
       "_tgt": "frontend_rendercardlogs",
@@ -3976,8 +3985,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L656",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L657",
       "weight": 1.0,
       "_src": "frontend_displaynextcardinqueue",
       "_tgt": "frontend_hidetimerui",
@@ -3988,8 +3997,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L657",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L658",
       "weight": 1.0,
       "_src": "frontend_displaynextcardinqueue",
       "_tgt": "frontend_resettimer",
@@ -4000,8 +4009,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L666",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L669",
       "weight": 1.0,
       "_src": "frontend_reviewaction",
       "_tgt": "frontend_handlecardreview",
@@ -4012,8 +4021,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L684",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L687",
       "weight": 1.0,
       "_src": "frontend_handlecreatecard",
       "_tgt": "frontend_createcard",
@@ -4024,8 +4033,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L701",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L704",
       "weight": 1.0,
       "_src": "frontend_handlecreatetag",
       "_tgt": "frontend_createtag",
@@ -4036,8 +4045,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L709",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L712",
       "weight": 1.0,
       "_src": "frontend_handledeletetag",
       "_tgt": "frontend_deletetag",
@@ -4060,8 +4069,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L904",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L907",
       "weight": 1.0,
       "_src": "frontend_ondrop",
       "_tgt": "frontend_handlecardreview",
@@ -4072,8 +4081,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L925",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L928",
       "weight": 1.0,
       "_src": "frontend_starttimer",
       "_tgt": "frontend_startinterval",
@@ -4084,8 +4093,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L963",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L967",
       "weight": 1.0,
       "_src": "frontend_startinterval",
       "_tgt": "frontend_updatetimerdisplay",
@@ -4096,8 +4105,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/frontend.js",
-      "source_location": "L986",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/frontend.js",
+      "source_location": "L991",
       "weight": 1.0,
       "_src": "frontend_resettimer",
       "_tgt": "frontend_updatetimerdisplay",
@@ -4108,80 +4117,104 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
       "source_location": "L4",
       "weight": 1.0,
-      "_src": "frontend_auth_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "_tgt": "auth_initauth",
-      "source": "frontend_auth_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "target": "auth_initauth",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
-      "source_location": "L31",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L28",
       "weight": 1.0,
-      "_src": "frontend_auth_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_auth_js",
+      "_tgt": "auth_initdarkmode",
+      "source": "users_sourabhnigam_leitnerapp_frontend_auth_js",
+      "target": "auth_initdarkmode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "_tgt": "auth_handlelogin",
-      "source": "frontend_auth_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "target": "auth_handlelogin",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
-      "source_location": "L63",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L84",
       "weight": 1.0,
-      "_src": "frontend_auth_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "_tgt": "auth_handleregister",
-      "source": "frontend_auth_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "target": "auth_handleregister",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
-      "source_location": "L98",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L119",
       "weight": 1.0,
-      "_src": "frontend_auth_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "_tgt": "auth_settoken",
-      "source": "frontend_auth_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "target": "auth_settoken",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
-      "source_location": "L103",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L124",
       "weight": 1.0,
-      "_src": "frontend_auth_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "_tgt": "auth_gettoken",
-      "source": "frontend_auth_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "target": "auth_gettoken",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
-      "source_location": "L107",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L128",
       "weight": 1.0,
-      "_src": "frontend_auth_js",
+      "_src": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "_tgt": "auth_logout",
-      "source": "frontend_auth_js",
+      "source": "users_sourabhnigam_leitnerapp_frontend_auth_js",
       "target": "auth_logout",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
-      "source_location": "L18",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "auth_initauth",
+      "_tgt": "auth_initdarkmode",
+      "source": "auth_initauth",
+      "target": "auth_initdarkmode",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L21",
       "weight": 1.0,
       "_src": "auth_initauth",
       "_tgt": "auth_gettoken",
@@ -4192,8 +4225,8 @@
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "frontend/auth.js",
-      "source_location": "L54",
+      "source_file": "/Users/sourabhnigam/leitnerApp/frontend/auth.js",
+      "source_location": "L75",
       "weight": 1.0,
       "_src": "auth_handlelogin",
       "_tgt": "auth_settoken",

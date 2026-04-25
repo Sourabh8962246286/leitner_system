@@ -4,6 +4,9 @@ const TOKEN_KEY = 'leitner_access_token';
 function initAuth() {
   const path = window.location.pathname;
 
+  // Initialize dark mode
+  initDarkMode();
+
   if (path.includes('login.html')) {
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
@@ -19,6 +22,24 @@ function initAuth() {
     if (!token) {
       window.location.href = '/login.html';
     }
+  }
+}
+
+function initDarkMode() {
+  // Apply dark mode if it was previously enabled
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+  }
+
+  // Setup dark mode toggle
+  const darkModeToggle = document.getElementById('dark-mode-toggle-auth');
+  if (darkModeToggle) {
+    darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    darkModeToggle.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
   }
 }
 
