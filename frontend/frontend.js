@@ -109,8 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function addEventListeners() {
-        correctBtn.addEventListener('click', () => { resetTimer(); reviewAction(true); });
-        incorrectBtn.addEventListener('click', () => { resetTimer(); reviewAction(false); });
+        correctBtn.addEventListener('click', () => { reviewAction(true); resetTimer(); });
+        incorrectBtn.addEventListener('click', () => { reviewAction(false); resetTimer(); });
         createCardForm.addEventListener('submit', handleCreateCard);
         createTagForm.addEventListener('submit', handleCreateTag);
         

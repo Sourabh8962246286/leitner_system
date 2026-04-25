@@ -1,7 +1,7 @@
 # Graph Report - /Users/sourabhnigam/leitnerApp  (2026-04-25)
 
 ## Corpus Check
-- 53 files · ~29,148 words
+- 53 files · ~29,150 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
