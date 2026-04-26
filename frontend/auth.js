@@ -71,9 +71,7 @@ async function handleLogin(event) {
       throw new Error(data.message || 'Login failed');
     }
 
-    console.log('Login successful, token received:', data.access_token);
     setToken(data.access_token);
-    console.log('Redirecting to index.html...');
     window.location.href = '/index.html';
   } catch (error) {
     errorMessageDiv.textContent = error.message;
@@ -107,7 +105,6 @@ async function handleRegister(event) {
     }
 
     // On successful registration, redirect to the login page.
-    console.log('Registration successful, redirecting to login.html');
     window.location.href = '/login.html';
 
   } catch (error) {
@@ -118,7 +115,6 @@ async function handleRegister(event) {
 
 function setToken(token) {
   localStorage.setItem(TOKEN_KEY, token);
-  console.log('Token stored in localStorage.');
 }
 
 function getToken() {

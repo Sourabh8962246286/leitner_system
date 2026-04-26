@@ -7,7 +7,7 @@ async function bootstrap() {
 
   app.enableCors({
     origin: process.env.NODE_ENV === 'production'
-      ? false                         // same origin in prod — no CORS needed
+      ? process.env.FRONTEND_URL      // e.g. https://leitnerpro.netlify.app
       : ['http://localhost:5173'],    // Vite dev server
   });
 
