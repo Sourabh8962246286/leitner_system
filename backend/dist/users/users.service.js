@@ -35,6 +35,9 @@ let UsersService = class UsersService {
     async findOne(email) {
         return this.userModel.findOne({ email }).exec();
     }
+    async findAll() {
+        return this.userModel.find().exec();
+    }
 };
 exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([

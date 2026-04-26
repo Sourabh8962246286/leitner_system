@@ -1,5 +1,10 @@
-
-import { IsBoolean, IsMongoId, IsNotEmpty } from 'class-validator';
+import {
+  IsBoolean,
+  IsMongoId,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+} from 'class-validator';
 
 /**
  * Data Transfer Object for a card review request.
@@ -13,4 +18,8 @@ export class ReviewCardDto {
   @IsNotEmpty()
   @IsBoolean()
   isCorrect: boolean;
+
+  @IsOptional()
+  @IsNumber()
+  timeSpent?: number; // in seconds from manual timer, 0 if timer wasn't used
 }

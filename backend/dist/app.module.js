@@ -9,6 +9,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
+const serve_static_1 = require("@nestjs/serve-static");
+const schedule_1 = require("@nestjs/schedule");
+const path_1 = require("path");
 const boxes_module_1 = require("./boxes/boxes.module");
 const cards_module_1 = require("./cards/cards.module");
 const subjects_module_1 = require("./subjects/subjects.module");
@@ -16,6 +19,9 @@ const tags_module_1 = require("./tags/tags.module");
 const auth_module_1 = require("./auth/auth.module");
 const users_module_1 = require("./users/users.module");
 const database_module_1 = require("./database/database.module");
+const notifications_module_1 = require("./notifications/notifications.module");
+const scheduler_module_1 = require("./scheduler/scheduler.module");
+const card_logs_module_1 = require("./card-logs/card-logs.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -25,6 +31,11 @@ exports.AppModule = AppModule = __decorate([
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
             }),
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: (0, path_1.join)(__dirname, '..', '..', 'frontend', 'dist'),
+                exclude: ['/api/{*path}'],
+            }),
+            schedule_1.ScheduleModule.forRoot(),
             database_module_1.DatabaseModule,
             auth_module_1.AuthModule,
             users_module_1.UsersModule,
@@ -32,6 +43,9 @@ exports.AppModule = AppModule = __decorate([
             cards_module_1.CardsModule,
             tags_module_1.TagsModule,
             subjects_module_1.SubjectsModule,
+            notifications_module_1.NotificationsModule,
+            scheduler_module_1.SchedulerModule,
+            card_logs_module_1.CardLogsModule,
         ],
         controllers: [],
         providers: [],

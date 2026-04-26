@@ -64,4 +64,8 @@ exports.Card = Card = __decorate([
     (0, mongoose_1.Schema)({ timestamps: true })
 ], Card);
 exports.CardSchema = mongoose_1.SchemaFactory.createForClass(Card);
+exports.CardSchema.index({ userId: 1, subjectId: 1 });
+exports.CardSchema.index({ userId: 1, currentBoxId: 1 });
+exports.CardSchema.index({ userId: 1, tags: 1 });
+exports.CardSchema.index({ userId: 1, lastReviewed: 1 });
 //# sourceMappingURL=card.schema.js.map

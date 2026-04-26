@@ -5,10 +5,14 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Enable CORS for frontend interaction
   app.enableCors({
-    origin: '*', // Adjust this in production to restrict allowed origins
+    origin: process.env.NODE_ENV === 'production'
+      ? false                         // same origin in prod — no CORS needed
+      : ['http://localhost:5173'],    // Vite dev server
   });
+
+  // All API routes will be prefixed with /api (e.g., /api/cards, /api/auth)
+  app.setGlobalPrefix('api');
 
   // Use a global pipe to enforce validation rules on all incoming client payloads
   app.useGlobalPipes(
