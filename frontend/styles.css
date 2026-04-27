@@ -296,6 +296,7 @@ main {
 
 #card-to-review .card.revealed .back {
     display: block;
+    user-select: text;
 }
 
 .card.dragging {

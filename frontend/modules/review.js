@@ -1,5 +1,5 @@
 import { state } from './state.js';
-import { apiHandleCardReview, apiFetchCardLogs } from './api.js';
+import { apiHandleCardReview, apiFetchCardLogs, apiUpdateCardLog } from './api.js';
 import { showTimerUI, hideTimerUI, resetTimer } from './timer.js';
 import { createCardElement } from './cardEditor.js';
 
@@ -18,6 +18,40 @@ export function init(domRefs, callbacks) {
         cardLogsList: _cardLogsList,
     } = domRefs);
     ({ refreshUI: _refreshUI } = callbacks);
+
+    _cardLogsList.addEventListener('click', async (e) => {
+        const editBtn = e.target.closest('.edit-timer-btn');
+        const saveBtn = e.target.closest('.save-timer-btn');
+        const cancelBtn = e.target.closest('.cancel-timer-btn');
+
+        if (editBtn) {
+            const timeSpent = parseInt(editBtn.dataset.timeSpent, 10) || 0;
+            const mins = Math.floor(timeSpent / 60);
+            const secs = timeSpent % 60;
+            const row = editBtn.closest('div[data-log-id]');
+            row.querySelector('.log-time-cell').innerHTML = `
+                <input type="number" class="form-control form-control-sm d-inline-block" style="width:52px" value="${mins}" min="0" max="99" data-field="mins">
+                <span class="mx-1 small">m</span>
+                <input type="number" class="form-control form-control-sm d-inline-block" style="width:52px" value="${secs}" min="0" max="59" data-field="secs">
+                <span class="mx-1 small">s</span>
+                <button class="btn btn-sm btn-success py-0 px-1 save-timer-btn" data-log-id="${row.dataset.logId}">✓</button>
+                <button class="btn btn-sm btn-secondary py-0 px-1 cancel-timer-btn">✕</button>
+            `;
+        }
+
+        if (saveBtn) {
+            const logId = saveBtn.dataset.logId;
+            const row = saveBtn.closest('div[data-log-id]');
+            const mins = Math.max(0, parseInt(row.querySelector('[data-field="mins"]').value, 10) || 0);
+            const secs = Math.min(59, Math.max(0, parseInt(row.querySelector('[data-field="secs"]').value, 10) || 0));
+            await apiUpdateCardLog(logId, mins * 60 + secs);
+            await loadAndRenderCardLogs();
+        }
+
+        if (cancelBtn) {
+            await loadAndRenderCardLogs();
+        }
+    });
 }
 
 export function displayCardForReview(card) {
@@ -123,16 +157,19 @@ function renderCardLogs(logs) {
         const dateStr = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
         const timeStr = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
         const resultIcon = log.isCorrect ? '✅' : '❌';
-        const timeStr2 = log.timeSpent > 0 ? `${Math.floor(log.timeSpent / 60)}m ${log.timeSpent % 60}s` : 'No timer';
+        const timeLabel = log.timeSpent > 0 ? `${Math.floor(log.timeSpent / 60)}m ${log.timeSpent % 60}s` : 'No timer';
         const boxMovement = `Box ${log.previousBoxLevel} → Box ${log.newBoxLevel}`;
         return `
-            <div class="d-flex justify-content-between align-items-start py-1 border-bottom">
+            <div class="d-flex justify-content-between align-items-center py-1 border-bottom" data-log-id="${log._id}">
                 <div class="small">
                     <span>${resultIcon}</span>
                     <span class="ms-2">${dateStr} ${timeStr}</span>
                     <span class="ms-2 text-muted">${boxMovement}</span>
                 </div>
-                <span class="small text-muted">${timeStr2}</span>
+                <div class="d-flex align-items-center gap-1 log-time-cell">
+                    <span class="small text-muted">${timeLabel}</span>
+                    <button class="btn btn-sm py-0 px-1 edit-timer-btn" data-log-id="${log._id}" data-time-spent="${log.timeSpent}" title="Edit timer">✏️</button>
+                </div>
             </div>
         `;
     }).join('');

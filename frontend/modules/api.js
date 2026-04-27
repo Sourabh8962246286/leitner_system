@@ -110,3 +110,12 @@ export async function apiFetchCardLogs(cardId) {
     if (!response.ok) throw new Error('Failed to fetch card logs');
     return response.json();
 }
+
+export async function apiUpdateCardLog(logId, timeSpent) {
+    const response = await fetchWithAuth(`${API_BASE_URL}/card-logs/${logId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ timeSpent }),
+    });
+    if (!response.ok) throw new Error('Failed to update card log');
+    return response.json();
+}

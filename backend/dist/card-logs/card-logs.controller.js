@@ -16,6 +16,7 @@ exports.CardLogsController = void 0;
 const common_1 = require("@nestjs/common");
 const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
 const card_logs_service_1 = require("./card-logs.service");
+const update_card_log_dto_1 = require("./dto/update-card-log.dto");
 let CardLogsController = class CardLogsController {
     cardLogsService;
     constructor(cardLogsService) {
@@ -23,6 +24,9 @@ let CardLogsController = class CardLogsController {
     }
     getCardLogs(cardId, req) {
         return this.cardLogsService.getLogsForCard(cardId, req.user.userId);
+    }
+    updateLogTimeSpent(logId, body, req) {
+        return this.cardLogsService.updateLogTimeSpent(logId, req.user.userId, body.timeSpent);
     }
 };
 exports.CardLogsController = CardLogsController;
@@ -34,6 +38,15 @@ __decorate([
     __metadata("design:paramtypes", [String, Object]),
     __metadata("design:returntype", void 0)
 ], CardLogsController.prototype, "getCardLogs", null);
+__decorate([
+    (0, common_1.Patch)(':logId'),
+    __param(0, (0, common_1.Param)('logId')),
+    __param(1, (0, common_1.Body)()),
+    __param(2, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, update_card_log_dto_1.UpdateCardLogDto, Object]),
+    __metadata("design:returntype", void 0)
+], CardLogsController.prototype, "updateLogTimeSpent", null);
 exports.CardLogsController = CardLogsController = __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Controller)('card-logs'),

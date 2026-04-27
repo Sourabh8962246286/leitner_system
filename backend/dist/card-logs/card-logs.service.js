@@ -50,6 +50,13 @@ let CardLogsService = class CardLogsService {
             totalTimeSpent,
         };
     }
+    async updateLogTimeSpent(logId, userId, timeSpent) {
+        const log = await this.cardLogModel.findOne({ _id: logId, userId });
+        if (!log)
+            throw new common_1.NotFoundException('Log not found');
+        log.timeSpent = timeSpent;
+        return log.save();
+    }
     async deleteLogsForCard(cardId) {
         await this.cardLogModel.deleteMany({ cardId }).exec();
     }

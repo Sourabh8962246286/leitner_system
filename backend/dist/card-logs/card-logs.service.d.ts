@@ -21,5 +21,6 @@ export declare class CardLogsService {
         successRate: number;
         totalTimeSpent: number;
     }>;
+    updateLogTimeSpent(logId: string, userId: string, timeSpent: number): Promise<CardLog>;
     deleteLogsForCard(cardId: string): Promise<void>;
 }

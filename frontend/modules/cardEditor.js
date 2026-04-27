@@ -45,6 +45,11 @@ export function renderColorSelector(container, selectedCardColor = '') {
     container.appendChild(colorTray);
 }
 
+function linkifyText(text) {
+    const urlRegex = /(?<!href=["'])(https?:\/\/[^\s<>"']+)/g;
+    return text.replace(urlRegex, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+}
+
 export function createCardElement(card, { isForReview = false, onCardClick = null } = {}) {
     const cardElement = document.createElement('div');
     cardElement.className = 'card';
@@ -59,7 +64,7 @@ export function createCardElement(card, { isForReview = false, onCardClick = nul
     cardElement.innerHTML = `
         <div class="card-body">
             <div class="front">${card.front}</div>
-            <div class="back">${card.back}</div>
+            <div class="back">${linkifyText(card.back)}</div>
             <div class="card-tag-display text-muted small">${tagNames}</div>
             <div class="card-actions text-end mt-2">
                 <button class="btn btn-sm btn-outline-secondary edit-btn">Edit</button>
@@ -150,7 +155,7 @@ export function exitEditMode(cardElement, frontText, backText) {
     cardElement.draggable = true;
     const cardBody = cardElement.querySelector('.card-body');
     cardBody.querySelector('.front').innerHTML = frontText;
-    cardBody.querySelector('.back').innerHTML = backText;
+    cardBody.querySelector('.back').innerHTML = linkifyText(backText);
     cardBody.querySelector('.back').style.display = '';
     cardBody.querySelector('.card-actions').innerHTML = `
         <button class="btn btn-sm btn-outline-secondary edit-btn">Edit</button>

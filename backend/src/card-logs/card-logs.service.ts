@@ -1,4 +1,4 @@
-import { Injectable, ForbiddenException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CardLog, CardLogDocument } from './schemas/card-log.schema';
@@ -60,6 +60,13 @@ export class CardLogsService {
       successRate: Math.round(successRate * 100) / 100,
       totalTimeSpent,
     };
+  }
+
+  async updateLogTimeSpent(logId: string, userId: string, timeSpent: number): Promise<CardLog> {
+    const log = await this.cardLogModel.findOne({ _id: logId, userId });
+    if (!log) throw new NotFoundException('Log not found');
+    log.timeSpent = timeSpent;
+    return log.save();
   }
 
   async deleteLogsForCard(cardId: string): Promise<void> {
